@@ -17,14 +17,16 @@ assets() { gh release view "$TAG" -R "$REPO" --json assets --jq '.assets[].name'
 
 restore() {
     local dir=/build/state changed
+    # Freshly synced files are newer than the saved outputs. Age every source file,
+    # then re-touch projects whose revision changed so only those get rebuilt.
+    # Also on a first run: Siso (Android 17) records the exact input mtimes, so
+    # the state it saves only matches the next run if both used the same ones.
+    echo "Normalizing source mtimes"
+    find . -path ./out -prune -o -path ./.repo -prune -o -exec touch -h -d "@$EPOCH" {} +
     assets | grep -q '^revisions.txt$' || { echo "No saved out/ state"; return 0; }
     rm -rf "$dir" && mkdir -p "$dir"
     gh release download "$TAG" -R "$REPO" -p revisions.txt -D "$dir" || return 1
 
-    # Freshly synced files are newer than the saved outputs. Age every source file,
-    # then re-touch projects whose revision changed so only those get rebuilt.
-    echo "Normalizing source mtimes"
-    find . -path ./out -prune -o -path ./.repo -prune -o -exec touch -h -d "@$EPOCH" {} +
     changed=$(comm -23 <(sort /build/revisions.txt) <(sort "$dir/revisions.txt") | cut -d' ' -f1)
     echo "Projects changed since the saved state:" $changed
     for p in $changed; do [ -e "$p" ] && find "$p" -exec touch -h {} +; done
