@@ -4,7 +4,6 @@
     <remove-project path="device/google/cuttlefish_prebuilts" />
     <remove-project path="device/google/cuttlefish_vmm" />
     <remove-project path="device/google/trout" />
-    <remove-project path="device/generic/trusty" />
     <remove-project path="prebuilts/remoteexecution-client" />
     <!-- Only used for ABI checks, not part of the ROM -->
     <remove-project path="prebuilts/abi-dumps/ndk" />
