@@ -113,10 +113,18 @@ ensure_disk_swap() {
 }
 
 prune_tree() {
-    local keep d v clang=prebuilts/clang/host/linux-x86
-    # Default clang plus any other version the build system pins (e.g. bindgen's).
-    keep=$( { sed -n 's/.*ClangDefaultVersion *= *"\(clang-[^"]*\)".*/\1/p' build/soong/cc/config/global.go
-              grep -rhoE '"clang-r[0-9]+[a-z]?"' build/soong/rust/config build/soong/rust/bindgen.go | tr -d '"'; } | sort -u)
+    local default keep d v clang=prebuilts/clang/host/linux-x86
+    # Default clang: ClangDefaultVersion up to Android 16, the
+    # RELEASE_BUILD_CLANG_VERSION release flag from Android 17 on.
+    default=$( { sed -n 's/.*ClangDefaultVersion *= *"\(clang-[^"]*\)".*/\1/p' build/soong/cc/config/global.go
+                 grep -rl --include=RELEASE_BUILD_CLANG_VERSION.textproto . build/release vendor/*/release 2>/dev/null |
+                     xargs -r grep -hoE '"clang-r[0-9]+[a-z]?"' | tr -d '"'; } | sort -u)
+    # Without the default, pruning would delete the compiler the build uses.
+    [ -n "$default" ] || { echo "::warning::Default clang version not found, not pruning $clang"; }
+    # Plus any other version the build system pins (e.g. bindgen's).
+    keep=$( { echo "$default"
+              [ -n "$default" ] && grep -rhoE '"clang-r[0-9]+[a-z]?"' build/soong/rust/config build/soong/rust/bindgen.go | tr -d '"'; } |
+            sed '/^$/d' | sort -u)
     for v in $keep; do
         if [ ! -d "$clang/$v" ]; then
             echo "$clang/$v is missing (pruned earlier?), re-syncing $clang"
