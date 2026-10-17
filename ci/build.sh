@@ -260,6 +260,10 @@ while :; do
         set +u  # envsetup.sh is not nounset-clean
         # Emulator/cuttlefish host tools reference prebuilts dropped in ci/remove_unneeded.xml.
         export ALLOW_MISSING_DEPENDENCIES=true
+        # Siso (the default from Android 17 on) only writes its build state on a
+        # clean exit, and soong_ui kills it 3s after the time budget interrupt,
+        # so the next run rebuilt everything. Ninja logs every finished step.
+        export SOONG_NINJA=ninja
         source build/envsetup.sh
         breakfast "$DEVICE" "$VARIANT" || exit 1
         # Analysis (Soong/Kati) first, while the disk swap file is there; the
