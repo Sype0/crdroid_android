@@ -59,7 +59,8 @@ jobs:
           swap=8G
           if sudo modprobe zram 2>/dev/null || { sudo apt-get install -y -qq "linux-modules-extra-$(uname -r)" && sudo modprobe zram; }; then
             echo zstd | sudo tee /sys/block/zram0/comp_algorithm
-            echo 12G | sudo tee /sys/block/zram0/disksize
+            # Soong's heap compresses well, so 20G of zram holds far more than it costs in RAM
+            echo 20G | sudo tee /sys/block/zram0/disksize
             sudo mkswap /dev/zram0 && sudo swapon -p 100 /dev/zram0
             swap=5G
           else
