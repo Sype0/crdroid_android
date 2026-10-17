@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- CI only: large projects topaz does not need, dropped to fit the GitHub runner disk. -->
+<manifest>
+    <remove-project path="device/google/cuttlefish_prebuilts" />
+    <remove-project path="device/google/cuttlefish_vmm" />
+    <remove-project path="device/google/trout" />
+    <remove-project path="device/generic/trusty" />
+    <remove-project path="prebuilts/remoteexecution-client" />
+    <!-- Only used for ABI checks, not part of the ROM -->
+    <remove-project path="prebuilts/abi-dumps/ndk" />
+    <remove-project path="prebuilts/abi-dumps/platform" />
+    <remove-project path="prebuilts/abi-dumps/vndk" />
+    <!-- Only trusty/emulator host packages need it; tolerated by ALLOW_MISSING_DEPENDENCIES -->
+    <remove-project path="prebuilts/android-emulator" />
+    <remove-project path="prebuilts/qemu-kernel" />
+    <remove-project path="external/chromiumos-config" />
+    <remove-project path="kernel/prebuilts/mainline/arm64" />
+    <remove-project path="kernel/prebuilts/mainline/x86_64" />
+    <remove-project path="kernel/prebuilts/common-modules/virtual-device/6.1/arm64" />
+    <remove-project path="kernel/prebuilts/common-modules/virtual-device/6.1/x86-64" />
+    <remove-project path="kernel/prebuilts/common-modules/virtual-device/6.6/arm64" />
+    <remove-project path="kernel/prebuilts/common-modules/virtual-device/6.6/x86-64" />
+    <remove-project path="kernel/prebuilts/common-modules/virtual-device/6.12/arm64" />
+    <remove-project path="kernel/prebuilts/common-modules/virtual-device/6.12/x86-64" />
+    <remove-project path="kernel/prebuilts/common-modules/virtual-device/mainline/arm64" />
+    <remove-project path="kernel/prebuilts/common-modules/virtual-device/mainline/x86-64" />
+</manifest>

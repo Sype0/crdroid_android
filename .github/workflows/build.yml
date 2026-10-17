@@ -1,0 +1,172 @@
+name: Build crDroid 17.0 (topaz)
+
+on:
+  workflow_dispatch:
+    inputs:
+      variant:
+        description: Build variant
+        type: choice
+        options: [userdebug, user, eng]
+        default: userdebug
+      target:
+        description: make target
+        default: bacon
+      wait_for_fix:
+        description: On failure, keep the tree and wait for a pushed fix instead of exiting
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-${{ github.ref }}
+  cancel-in-progress: false
+
+env:
+  # crDroid 17.0 is based on LineageOS 24.0 (Android 17)
+  LOS_BRANCH: "17.0"
+  DEVICE: topaz
+  # GitHub kills the job at 360 min; leave room to save ccache + upload.
+  JOB_BUDGET_MIN: 335
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 360
+    steps:
+      - name: Record start time
+        run: echo "JOB_START=$(date +%s)" >> "$GITHUB_ENV"
+
+      - name: Remove preinstalled software
+        run: |
+          sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc /opt/hostedtoolcache \
+            /usr/local/share/boost /usr/local/share/powershell /usr/share/swift /usr/local/.ghcup \
+            /usr/lib/jvm /opt/microsoft /opt/google /usr/local/julia* /usr/share/miniconda \
+            /usr/local/lib/node_modules /usr/local/share/chromium /usr/local/share/vcpkg /usr/local/n \
+            /usr/local/aws-cli /usr/local/aws-sam-cli /opt/az /opt/pipx /opt/mssql-tools \
+            /usr/lib/google-cloud-sdk /usr/lib/mono /usr/lib/heroku /usr/lib/llvm-* /usr/lib/firefox \
+            /usr/share/gradle* /usr/share/apache-maven* /usr/share/kotlinc /usr/share/sbt \
+            /home/runner/.rustup /home/runner/.cargo /var/lib/gems || true
+          sudo docker image prune -a -f || true
+          sudo swapoff -a && sudo rm -f /mnt/swapfile /swapfile || true
+          df -h
+
+      - name: Prepare build dir and swap
+        run: |
+          sudo mkdir -p /build && sudo chown "$USER:$USER" /build
+          # Prefer zram (costs no disk) with a small disk swap as overflow.
+          swap=8G
+          if sudo modprobe zram 2>/dev/null || { sudo apt-get install -y -qq "linux-modules-extra-$(uname -r)" && sudo modprobe zram; }; then
+            echo zstd | sudo tee /sys/block/zram0/comp_algorithm
+            echo 12G | sudo tee /sys/block/zram0/disksize
+            sudo mkswap /dev/zram0 && sudo swapon -p 100 /dev/zram0
+            swap=5G
+          else
+            echo "::warning::zram unavailable, using a ${swap} swap file only"
+          fi
+          sudo fallocate -l "$swap" /swapfile && sudo chmod 600 /swapfile
+          sudo mkswap /swapfile && sudo swapon -p 10 /swapfile
+          df -h; free -h; nproc
+
+      - name: Checkout local manifests
+        uses: actions/checkout@v4
+        with:
+          path: manifests
+
+      - name: Install build dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y bc bison build-essential ccache curl flex g++-multilib gcc-multilib \
+            git git-lfs gnupg gperf imagemagick lib32readline-dev lib32z1-dev libelf-dev liblz4-tool \
+            libsdl1.2-dev libssl-dev libxml2 libxml2-utils lz4 lzop pngcrush rsync schedtool \
+            squashfs-tools xsltproc zip zlib1g-dev python3 python-is-python3 protobuf-compiler python3-protobuf
+          sudo curl -fsSL https://storage.googleapis.com/git-repo-downloads/repo -o /usr/local/bin/repo
+          sudo chmod a+x /usr/local/bin/repo
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@users.noreply.github.com"
+          git config --global color.ui false
+          git lfs install
+
+      - name: Start resource monitor
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          nohup bash -c 'while true; do echo "== $(date -u +%T) load=$(cut -d" " -f1-3 /proc/loadavg)"; free -m | sed -n 2,3p; df -m / /build | tail -2; sleep 60; done' > /build/monitor.log 2>&1 &
+          # Live view on the ci-live branch, so a runner that dies still leaves a trace
+          nohup "$GITHUB_WORKSPACE/manifests/ci/live.sh" > /dev/null 2>&1 &
+
+      - name: Init and sync sources
+        working-directory: /build
+        run: |
+          mkdir -p src && cd src
+          repo init -u https://github.com/crdroidandroid/android.git -b "$LOS_BRANCH" \
+            --git-lfs --depth=1 --no-clone-bundle -g default,-mips,-darwin,-notdefault
+          mkdir -p .repo/local_manifests
+          cp "$GITHUB_WORKSPACE/manifests/local_manifests.xml" .repo/local_manifests/
+          cp "$GITHUB_WORKSPACE/manifests/ci/remove_unneeded.xml" .repo/local_manifests/
+          rc=0
+          "$GITHUB_WORKSPACE/manifests/ci/sync.sh" || rc=$?
+          # Drop clang toolchains the build system does not reference (several GB each).
+          keep=$(grep -rhoE 'clang-r[0-9]+[a-z]?' build/soong build/make vendor/lineage 2>/dev/null | sort -u)
+          for d in prebuilts/clang/host/linux-x86/clang-r*; do
+            [ -L "$d" ] && continue
+            grep -qx "$(basename "$d")" <<< "$keep" || { echo "Removing unused $d"; rm -rf "$d"; }
+          done
+          du -sh .repo 2>/dev/null; du -sh -- */ 2>/dev/null | sort -rh | head -15
+          du -sh prebuilts/*/ external/*/ 2>/dev/null | sort -rh | head -25
+          tail -3 /build/monitor.log
+          df -h /build
+          exit $rc
+
+      - name: Build
+        id: build
+        working-directory: /build/src
+        env:
+          # Keep the ccache prefix so compile commands match the saved out/
+          # (a changed command line makes ninja rebuild), but cache nothing:
+          # out/ itself is carried between runs and the disk is needed.
+          USE_CCACHE: 1
+          CCACHE_EXEC: /usr/bin/ccache
+          CCACHE_DIR: /build/ccache
+          CCACHE_DISABLE: 1
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          tail -3 /build/monitor.log
+          # Pick up fixes pushed while syncing; copy so later pushes can't change the script mid-run.
+          git -C "$GITHUB_WORKSPACE/manifests" pull -q --ff-only || true
+          cp "$GITHUB_WORKSPACE/manifests/local_manifests.xml" .repo/local_manifests/
+          cp "$GITHUB_WORKSPACE/manifests/ci/build.sh" /build/ci-build.sh
+          rc=0
+          VARIANT="${{ inputs.variant }}" TARGET="${{ inputs.target }}" WAIT_FOR_FIX="${{ inputs.wait_for_fix }}" \
+            MANIFESTS_DIR="$GITHUB_WORKSPACE/manifests" /build/ci-build.sh || rc=$?
+          df -h /build; free -h
+          echo "rc=$rc" >> "$GITHUB_OUTPUT"
+          exit "$rc"
+
+      - name: Upload build log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-log
+          path: |
+            /build/build.log
+            /build/build-attempt*.log
+            /build/monitor.log
+            /build/src/out/error.log
+            /build/src/out/soong.log
+          if-no-files-found: ignore
+
+      - name: Publish ROM to a release
+        if: success()
+        working-directory: /build/src/out/target/product/${{ env.DEVICE }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          zip=$(ls -t crDroidAndroid-*.zip lineage-*.zip 2>/dev/null | head -1)
+          sha256sum "$zip" > "$zip.sha256sum"
+          files=("$zip" "$zip.sha256sum")
+          for img in boot.img vendor_boot.img dtbo.img recovery.img; do [ -f "$img" ] && files+=("$img"); done
+          tag="${DEVICE}-$(date +%Y%m%d)-${{ github.run_number }}"
+          gh release create "$tag" "${files[@]}" -R "$GITHUB_REPOSITORY" \
+            --title "crDroid 17.0 $DEVICE $(date +%Y-%m-%d)" --notes "Built by run ${{ github.run_id }} (no MIUI Camera)."
