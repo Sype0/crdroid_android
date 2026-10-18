@@ -108,12 +108,8 @@ jobs:
           cp "$GITHUB_WORKSPACE/manifests/ci/remove_unneeded.xml" .repo/local_manifests/
           rc=0
           "$GITHUB_WORKSPACE/manifests/ci/sync.sh" || rc=$?
-          # Drop clang toolchains the build system does not reference (several GB each).
-          keep=$(grep -rhoE 'clang-r[0-9]+[a-z]?' build/soong build/make vendor/lineage 2>/dev/null | sort -u)
-          for d in prebuilts/clang/host/linux-x86/clang-r*; do
-            [ -L "$d" ] && continue
-            grep -qx "$(basename "$d")" <<< "$keep" || { echo "Removing unused $d"; rm -rf "$d"; }
-          done
+          # Unused clang versions are pruned by ci/build.sh, which also knows the
+          # release-config clang (pruning that here made it re-sync the whole project).
           du -sh .repo 2>/dev/null; du -sh -- */ 2>/dev/null | sort -rh | head -15
           du -sh prebuilts/*/ external/*/ 2>/dev/null | sort -rh | head -25
           tail -3 /build/monitor.log

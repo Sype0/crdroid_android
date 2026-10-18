@@ -105,14 +105,30 @@ ensure_disk_swap() {
         avail=$(df -BM --output=avail / | tail -1 | tr -dc 0-9)
     fi
     # The analysis peaks well above RAM + zram (Android 17 + crDroid: past
-    # 16 GB RAM + 23 GB swap); add as much as the disk allows, keeping 8 GB free
+    # 16 GB RAM + 37 GB swap); add as much as the disk allows, keeping 8 GB free
     local size=$(( ${avail:-0} - 8192 ))
-    [ "$size" -gt 16384 ] && size=16384
+    [ "$size" -gt 24576 ] && size=24576
     if ! swapon --show=NAME --noheadings | grep -qx /swapfile2 && [ "$size" -ge 2048 ]; then
         echo "Adding a ${size}M second swap file for the analysis (${avail}M free)"
         sudo fallocate -l "${size}M" /swapfile2 && sudo chmod 600 /swapfile2 && sudo mkswap -q /swapfile2 && sudo swapon -p 10 /swapfile2
     fi
     swapon --show
+}
+
+# out/ grows every run, leaving less disk for swap, and once RAM + swap run out
+# the runner dies without saving out/. A Go memory limit makes soong_build
+# collect garbage harder near that point instead. soong_ui starts the
+# bootstrap ninja with only TOP and PATH set, so pass it through a wrapper.
+limit_soong_memory() {
+    local nb=prebuilts/build-tools/linux-x86/bin/ninja mem swap lim
+    [ -e "$nb.real" ] || mv "$nb" "$nb.real" || return
+    mem=$(awk '/^MemTotal:/ {print int($2 / 1024)}' /proc/meminfo)
+    swap=$(awk '/^SwapTotal:/ {print int($2 / 1024)}' /proc/meminfo)
+    # Leave room for the compressed zram pages and everything else
+    lim=$(( mem + swap - 12288 ))
+    printf '#!/bin/sh\nGOMEMLIMIT=%sMiB exec %s "$@"\n' "$lim" "$PWD/$nb.real" > "$nb"
+    chmod 755 "$nb"
+    echo "soong_build memory limit: ${lim}M (RAM ${mem}M + swap ${swap}M)"
 }
 
 prune_tree() {
@@ -133,6 +149,8 @@ prune_tree() {
             echo "$clang/$v is missing (pruned earlier?), re-syncing $clang"
             rm -rf "$clang" ".repo/projects/$clang.git"
             repo sync -c --force-sync --no-clone-bundle --no-tags "$clang" < /dev/null
+            # Drop its git history like ci/sync.sh does (several GB the analysis needs as swap)
+            rm -rf "$clang/.git" ".repo/projects/$clang.git" ".repo/project-objects/$(repo list -n "$clang").git"
             # Fresh mtimes on the compiler would make every C/C++ output stale.
             find "$clang" -exec touch -h -d @1577836800 {} +
             break
@@ -269,6 +287,7 @@ while :; do
         # Analysis (Soong/Kati) first, while the disk swap file is there; the
         # build after it needs the disk space more than the swap
         ensure_disk_swap
+        limit_soong_memory
         timeout --signal=INT --kill-after=2m "${left}m" m --skip-ninja "$TARGET" || exit $?
         free_disk_swap
         # A resumed out/ should leave little to do; show why ninja disagrees.
