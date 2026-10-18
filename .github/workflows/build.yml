@@ -171,3 +171,11 @@ jobs:
           tag="${DEVICE}-$(date +%Y%m%d)-${{ github.run_number }}"
           gh release create "$tag" "${files[@]}" -R "$GITHUB_REPOSITORY" \
             --title "crDroid 17.0 $DEVICE $(date +%Y-%m-%d)" --notes "Built by run ${{ github.run_id }} (no MIUI Camera)."
+
+      - name: Drop the saved out/ state
+        if: success()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        # ci/sync.sh pins sources to the saved state; once the ROM is out the
+        # next build should start from the latest sources.
+        run: gh release delete ci-out-state -R "$GITHUB_REPOSITORY" -y --cleanup-tag || true
