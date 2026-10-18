@@ -36,6 +36,9 @@
         <linkfile src="os_pickup_qssi.bp" dest="hardware/qcom-caf/sm8750/Android.bp" />
         <linkfile src="os_pickup_qssi.bp" dest="hardware/qcom-caf/sm8850/Android.bp" />
     </project>
+    <!-- Exact LDO driver match: the 50 ms clamp stretched every haptic tick on topaz -->
+    <remove-project path="vendor/qcom/opensource/vibrator" />
+    <project name="Sype0/android_vendor_qcom_opensource_vibrator" path="vendor/qcom/opensource/vibrator" remote="gh" revision="crdroid-17.0" />
 
     <!-- SM6225 trees -->
     <project path="hardware/qcom-caf/sm6225/audio/agm" name="rn124g-development/android_hardware_qcom-caf_sm6225_audio_agm" remote="gh" revision="sixteen" />
