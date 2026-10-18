@@ -271,6 +271,13 @@ while :; do
         ensure_disk_swap
         timeout --signal=INT --kill-after=2m "${left}m" m --skip-ninja "$TARGET" || exit $?
         free_disk_swap
+        # A resumed out/ should leave little to do; show why ninja disagrees.
+        ls -l --time-style=full-iso out/.ninja_log out/.ninja_deps 2>&1
+        ninja_bin=prebuilts/build-tools/linux-x86/bin/ninja
+        combined=$(ls out/combined-*.ninja 2>/dev/null | head -1)
+        if [ -x "$ninja_bin" ] && [ -n "$combined" ]; then
+            timeout 10m "$ninja_bin" -f "$combined" -n -d explain "$TARGET" 2>&1 | grep -m 25 'ninja explain' || true
+        fi
         # A full disk kills the runner before out/ can be saved: stop the build
         # first, the interrupt is then saved like a timeout
         ( while sleep 20; do
