@@ -132,7 +132,7 @@ limit_soong_memory() {
 }
 
 prune_tree() {
-    local default keep d v clang=prebuilts/clang/host/linux-x86
+    local default keep d v base clang=prebuilts/clang/host/linux-x86
     # Default clang: ClangDefaultVersion up to Android 16, the
     # RELEASE_BUILD_CLANG_VERSION release flag from Android 17 on.
     default=$( { sed -n 's/.*ClangDefaultVersion *= *"\(clang-[^"]*\)".*/\1/p' build/soong/cc/config/global.go
@@ -159,12 +159,19 @@ prune_tree() {
             echo "Pruning $d (keeping:" $keep")"; rm -rf "$d"
         done
     fi
+    # Rust: prebuilts/rust/ up to Android 16, RustDefaultBase (prebuilts/rust-toolchain/,
+    # ~13 GB with three versions per host) from Android 17 on.
     v=$(sed -n 's/.*RustDefaultVersion *= *"\([0-9.]*\)".*/\1/p' build/soong/rust/config/global.go)
-    if [ -n "$v" ] && [ -d "prebuilts/rust/linux-x86/$v" ]; then
-        for d in prebuilts/rust/*/[0-9]*.[0-9]*; do
+    base=$(sed -n 's/.*RustDefaultBase *= *"\([^"]*\)".*/\1/p' build/soong/rust/config/global.go)
+    base=${base%/}
+    [ -n "$base" ] || base=prebuilts/rust
+    if [ -n "$v" ] && [ -d "$base/linux-x86/$v" ]; then
+        for d in "$base"/*/[0-9]*.[0-9]*; do
             [ -L "$d" ] || [ "$(basename "$d")" = "$v" ] && continue
             echo "Pruning $d (default is $v)"; rm -rf "$d"
         done
+    else
+        echo "::warning::Rust $v not found in $base/linux-x86, not pruning $base"
     fi
     # Whole projects go in ci/remove_unneeded.xml instead, so they are not
     # synced back. Not cts: system modules such as aconfigd-system use it.
