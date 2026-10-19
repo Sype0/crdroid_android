@@ -284,6 +284,8 @@ while :; do
         limit_soong_memory
         timeout --signal=INT --kill-after=2m "${left}m" m --skip-ninja "$TARGET" || exit $?
         free_disk_swap
+        # The saved build outputs were left out for the analysis (ci/state.sh)
+        /build/ci-state.sh restore_bulk || exit 3
         # A resumed out/ should leave little to do; show why ninja disagrees.
         ls -l --time-style=full-iso out/.ninja_log out/.ninja_deps 2>&1
         ninja_bin=prebuilts/build-tools/linux-x86/bin/ninja
