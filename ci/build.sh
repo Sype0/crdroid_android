@@ -144,17 +144,11 @@ prune_tree() {
     keep=$( { echo "$default"
               [ -n "$default" ] && grep -rhoE '"clang-r[0-9]+[a-z]?"' build/soong/rust/config build/soong/rust/bindgen.go | tr -d '"'; } |
             sed '/^$/d' | sort -u)
+    # The tree is freshly synced and nothing prunes before this point, so a
+    # missing version is simply not in this clang revision: release configs
+    # that are not selected name clangs too. (Re-syncing cost 12 min a run.)
     for v in $keep; do
-        if [ ! -d "$clang/$v" ]; then
-            echo "$clang/$v is missing (pruned earlier?), re-syncing $clang"
-            rm -rf "$clang" ".repo/projects/$clang.git"
-            repo sync -c --force-sync --no-clone-bundle --no-tags "$clang" < /dev/null
-            # Drop its git history like ci/sync.sh does (several GB the analysis needs as swap)
-            rm -rf "$clang/.git" ".repo/projects/$clang.git" ".repo/project-objects/$(repo list -n "$clang").git"
-            # Fresh mtimes on the compiler would make every C/C++ output stale.
-            find "$clang" -exec touch -h -d @1577836800 {} +
-            break
-        fi
+        [ -d "$clang/$v" ] || echo "$clang/$v is not in the synced tree, assuming it is unused"
     done
     if [ -n "$keep" ]; then
         for d in "$clang"/clang-r*; do
