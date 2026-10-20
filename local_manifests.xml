@@ -7,18 +7,18 @@
     <!-- - Initial A16 Local Manifest - @BaranAspect -->
 
     <!-- Main Trees From BaranAspect -->
-    <project name="Sype0/android_device_xiaomi_topaz" path="device/xiaomi/topaz" remote="gh" revision="crdroid-17.0" />
-    <project name="Sype0/android_vendor_xiaomi_topaz" path="vendor/xiaomi/topaz" remote="gh" revision="crdroid-17.0" />
+    <project name="Sype0/android_device_xiaomi_topaz" path="device/xiaomi/topaz" remote="gh" revision="lineage-23.2" />
+    <project name="Sype0/android_vendor_xiaomi_topaz" path="vendor/xiaomi/topaz" remote="gh" revision="lineage-23.2" />
     <project name="BaranAspect-Development/android_kernel_xiaomi_topaz" path="device/xiaomi/topaz-kernel" remote="gh" revision="lineage-23.0" />
 
     <!-- LineageOS Xiaomi SEPolicy Trees -->
-    <project name="Sype0/android_device_qcom_sepolicy_vndr_sm6225" path="device/qcom/sepolicy_vndr/sm6225" remote="gh" revision="crdroid-17.0" />
-    <project name="Sype0/android_device_xiaomi_sepolicy" path="device/xiaomi/sepolicy" remote="gh" revision="crdroid-17.0" />
+    <project name="Sype0/android_device_qcom_sepolicy_vndr_sm6225" path="device/qcom/sepolicy_vndr/sm6225" remote="gh" revision="lineage-23.2" />
+    <project name="Sype0/android_device_xiaomi_sepolicy" path="device/xiaomi/sepolicy" remote="gh" revision="lineage-23.2" />
 
     <!-- LineageOS hardware trees -->
-    <project name="LineageOS/android_hardware_xiaomi" path="hardware/xiaomi" remote="gh" revision="lineage-24.0" />
+    <project name="LineageOS/android_hardware_xiaomi" path="hardware/xiaomi" remote="gh" revision="lineage-23.2" />
     <remove-project path="hardware/qcom-caf/common" />
-    <project name="Sype0/android_hardware_qcom-caf_common" path="hardware/qcom-caf/common" remote="gh" revision="crdroid-17.0" >
+    <project name="Sype0/android_hardware_qcom-caf_common" path="hardware/qcom-caf/common" remote="gh" revision="lineage-23.2" >
         <!-- Same guards as LineageOS's hardware/qcom-caf/common entry; without them every CAF platform gets built -->
         <linkfile src="os_pickup_aosp.mk" dest="hardware/qcom/Android.mk" />
         <linkfile src="os_pickup_sepolicy_vndr.mk" dest="device/qcom/sepolicy_vndr/SEPolicy.mk" />
@@ -38,7 +38,7 @@
     </project>
     <!-- Exact LDO driver match: the 50 ms clamp stretched every haptic tick on topaz -->
     <remove-project path="vendor/qcom/opensource/vibrator" />
-    <project name="Sype0/android_vendor_qcom_opensource_vibrator" path="vendor/qcom/opensource/vibrator" remote="gh" revision="crdroid-17.0" />
+    <project name="Sype0/android_vendor_qcom_opensource_vibrator" path="vendor/qcom/opensource/vibrator" remote="gh" revision="lineage-23.2" />
 
     <!-- SM6225 trees -->
     <project path="hardware/qcom-caf/sm6225/audio/agm" name="rn124g-development/android_hardware_qcom-caf_sm6225_audio_agm" remote="gh" revision="sixteen" />

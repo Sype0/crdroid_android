@@ -1,4 +1,4 @@
-name: Build crDroid 17.0 (topaz)
+name: Build crDroid 16.0 (topaz)
 
 on:
   workflow_dispatch:
@@ -24,8 +24,8 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  # crDroid 17.0 is based on LineageOS 24.0 (Android 17)
-  LOS_BRANCH: "17.0"
+  # crDroid 16.0 is based on LineageOS 23.2 (Android 16)
+  LOS_BRANCH: "16.0"
   DEVICE: topaz
   # GitHub kills the job at 360 min; leave room to save ccache + upload.
   JOB_BUDGET_MIN: 335
