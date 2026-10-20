@@ -323,6 +323,10 @@ while :; do
     rc=${PIPESTATUS[0]}
     df -h /build | tail -1
     [ "$rc" = 0 ] && { publish_status "$attempt" 0 success; break; }
+    if [ -f /build/disk-stop ]; then
+        echo "::warning::Build stopped with the disk nearly full; saving out/."
+        break
+    fi
     if [ "$rc" = 124 ] || [ "$rc" = 130 ]; then
         echo "::warning::Build stopped at the time budget; saving out/ so the next run continues."
         break

@@ -181,8 +181,8 @@ jobs:
           echo "rc=$RC state=$STATE ninja=${NINJA_MIN}m last progress: $PROGRESS chain_left=$CHAIN_LEFT"
           chain=${CHAIN_LEFT%.*}; chain=${chain:-0}
           why=
-          case $RC in 124|130) ;; *) why="the build failed (rc $RC), it was not a time-budget stop" ;; esac
-          [ -z "$why" ] && [ "$DISK_STOP" = true ] && why="the disk filled up; the next run would stop at the same point"
+          [ "$DISK_STOP" = true ] && why="the disk filled up; the next run would stop at the same point"
+          [ -z "$why" ] && case $RC in 124|130) ;; *) why="the build failed (rc $RC), it was not a time-budget stop" ;; esac
           [ -z "$why" ] && [ "$STATE" != saved ] && why="out/ was not saved (${STATE:-unknown})"
           [ -z "$why" ] && [ "${NINJA_MIN:-0}" -lt 20 ] && why="ninja ran only ${NINJA_MIN:-0} min, too little progress"
           [ -z "$why" ] && [ "$chain" -le 0 ] && why="chain_left is 0"
