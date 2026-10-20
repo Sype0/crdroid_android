@@ -22,12 +22,34 @@ BULK=(./target ./host ./soong/.intermediates)
 
 assets() { gh release view "$TAG" -R "$REPO" --json assets --jq '.assets[].name' 2>/dev/null; }
 bulk_excludes() { local b; for b in "${BULK[@]}"; do echo "--exclude=$b"; echo "--exclude=$b/*"; done; }
-# fetch <prefix>: the concatenated chunks of <prefix>.tar.zst.* on stdout
-fetch() {
-    local a
-    for a in $(assets | grep "^$1\.tar\.zst\." | sort); do
-        gh release download "$TAG" -R "$REPO" -p "$a" -O - || return 1
+# download <asset> <file>: retried, since a connection reset mid-chunk is common
+download() {
+    local n
+    for n in 1 2 3 4 5; do
+        gh release download "$TAG" -R "$REPO" -p "$1" -O "$2" --clobber && return 0
+        echo "Downloading $1 failed (attempt $n)" >&2
+        sleep $((n * 20))
     done
+    return 1
+}
+# fetch <prefix>: the concatenated chunks of <prefix>.tar.zst.* on stdout.
+# A chunk streamed straight into tar cannot be retried, so each one is
+# downloaded to disk first, the next one while the current one is unpacked.
+fetch() {
+    local dir=/build/fetch chunks i pid
+    mapfile -t chunks < <(assets | grep "^$1\.tar\.zst\." | sort)
+    [ ${#chunks[@]} -eq 0 ] && return 0
+    rm -rf "$dir" && mkdir -p "$dir"
+    download "${chunks[0]}" "$dir/${chunks[0]}" >&2 & pid=$!
+    for ((i = 0; i < ${#chunks[@]}; i++)); do
+        wait "$pid" || { rm -rf "$dir"; return 1; }
+        if [ $((i + 1)) -lt ${#chunks[@]} ]; then
+            download "${chunks[i + 1]}" "$dir/${chunks[i + 1]}" >&2 & pid=$!
+        fi
+        cat "$dir/${chunks[i]}" || { kill "$pid" 2>/dev/null; wait; rm -rf "$dir"; return 1; }
+        rm -f "$dir/${chunks[i]}"
+    done
+    rm -rf "$dir"
 }
 # After a failed restore, keep the saved state instead of replacing it with less.
 no_save() { touch /build/no-save-state; echo "::warning::$1; the saved state will not be replaced"; }
