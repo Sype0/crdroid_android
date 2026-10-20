@@ -301,18 +301,22 @@ while :; do
             timeout 10m "$ninja_bin" -f "$combined" -n -d explain "$TARGET" 2>&1 | grep -m 25 'ninja explain' || true
         fi
         # A full disk kills the runner before out/ can be saved: stop the build
-        # first, the interrupt is then saved like a timeout
-        ( while sleep 20; do
+        # first, the interrupt is then saved like a timeout. Checked often, the
+        # compressed out/ volume can eat the last few GB within a minute.
+        ( while sleep 10; do
             a=$(df -BM --output=avail / | tail -1 | tr -dc 0-9)
-            if [ "${a:-0}" -lt 2048 ]; then
+            if [ "${a:-0}" -lt 3072 ]; then
                 echo "Only ${a}M left on the disk, stopping the build to save out/"
+                touch /build/disk-stop
                 pkill -INT -f soong_ui
                 break
             fi
         done ) &
         guard=$!
+        start=$(date +%s)
         timeout --signal=INT --kill-after=2m "$(minutes_left)m" m "$TARGET" -j"$(nproc)"
         rc=$?
+        echo $(( ($(date +%s) - start) / 60 )) > /build/ninja-minutes
         kill "$guard" 2>/dev/null
         exit $rc
     ) 2>&1 | tee /build/build.log
@@ -335,6 +339,10 @@ while :; do
     cp "$MANIFESTS_DIR/ci/build.sh" "/build/ci-build-$attempt.sh"
     ATTEMPT=$attempt exec "/build/ci-build-$attempt.sh"
 done
+# For the workflow's decision to start the next run (build.yml)
+ninja_min=$(cat /build/ninja-minutes 2>/dev/null || echo 0)
+progress=$(grep -oE '^\[ *[0-9]+% [0-9]+/[0-9]+' /build/build.log 2>/dev/null | tail -1 | sed 's/^\[ *//')
+st=none
 if [ "$rc" != 0 ]; then
     rm -f /build/ballast
     publish_status "$attempt" "$rc" saving-state
@@ -342,5 +350,13 @@ if [ "$rc" != 0 ]; then
     # Free the disk so the ccache can still be saved.
     mountpoint -q out && sudo umount out && rm -f /build/out.img
     publish_status "$attempt" "$rc" "$st"
+fi
+if [ -n "${GITHUB_OUTPUT:-}" ]; then
+    {
+        echo "state=${st#state-}"
+        echo "ninja_min=$ninja_min"
+        echo "progress=$progress"
+        echo "disk_stop=$([ -f /build/disk-stop ] && echo true || echo false)"
+    } >> "$GITHUB_OUTPUT"
 fi
 exit "$rc"
