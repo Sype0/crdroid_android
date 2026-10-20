@@ -19,11 +19,14 @@
     <project name="LineageOS/android_hardware_xiaomi" path="hardware/xiaomi" remote="gh" revision="lineage-23.2" />
     <remove-project path="hardware/qcom-caf/common" />
     <project name="Sype0/android_hardware_qcom-caf_common" path="hardware/qcom-caf/common" remote="gh" revision="lineage-23.2" >
-        <!-- Same guards as LineageOS's hardware/qcom-caf/common entry; without them every CAF platform gets built -->
+        <!-- Same guards as crDroid 16.0's (LineageOS 23.2) hardware/qcom-caf/common entry; without them
+             every CAF platform gets built (msm8998/display clashed with sm6225/display: display_headers) -->
         <linkfile src="os_pickup_aosp.mk" dest="hardware/qcom/Android.mk" />
         <linkfile src="os_pickup_sepolicy_vndr.mk" dest="device/qcom/sepolicy_vndr/SEPolicy.mk" />
         <linkfile src="os_pickup_qssi.bp" dest="hardware/qcom-caf/msm8953/Android.bp" />
+        <linkfile src="os_pickup.bp" dest="hardware/qcom-caf/msm8998/Android.bp" />
         <linkfile src="os_pickup_qssi.bp" dest="hardware/qcom-caf/sdm660/Android.bp" />
+        <linkfile src="os_pickup_qssi.bp" dest="hardware/qcom-caf/sdm845/Android.bp" />
         <!-- Not in LineageOS: makes hardware/qcom-caf/sm6225 the QCOM_SOONG_NAMESPACE that bengal_515 selects -->
         <linkfile src="os_pickup_qssi.bp" dest="hardware/qcom-caf/sm6225/Android.bp" />
         <linkfile src="os_pickup_qssi.bp" dest="hardware/qcom-caf/sm8150/Android.bp" />
@@ -34,7 +37,6 @@
         <linkfile src="os_pickup_qssi.bp" dest="hardware/qcom-caf/sm8550/Android.bp" />
         <linkfile src="os_pickup_qssi.bp" dest="hardware/qcom-caf/sm8650/Android.bp" />
         <linkfile src="os_pickup_qssi.bp" dest="hardware/qcom-caf/sm8750/Android.bp" />
-        <linkfile src="os_pickup_qssi.bp" dest="hardware/qcom-caf/sm8850/Android.bp" />
     </project>
     <!-- Exact LDO driver match: the 50 ms clamp stretched every haptic tick on topaz -->
     <remove-project path="vendor/qcom/opensource/vibrator" />

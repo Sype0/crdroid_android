@@ -17,8 +17,7 @@ total=$(wc -l < /tmp/projects.txt)
 # Projects from the local manifests still follow their branches.
 pin_to_saved_state() {
     rm -f "$PINS"
-    curl -fsSL -o /tmp/saved-revisions.txt \
-        "https://github.com/$GITHUB_REPOSITORY/releases/download/ci-out-state/revisions.txt" ||
+    "$(dirname "$0")/state.sh" revisions /tmp/saved-revisions.txt ||
         { echo "No saved out/ state, syncing the latest sources"; return 0; }
     python3 - /tmp/saved-revisions.txt /tmp/projects.txt "$PWD" .repo/local_manifests/*.xml > /tmp/pins.xml <<'PY' || return 1
 import sys, xml.etree.ElementTree as ET

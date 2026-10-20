@@ -15,9 +15,15 @@ on:
         description: On failure, keep the tree and wait for a pushed fix instead of exiting
         type: boolean
         default: true
+      chain_left:
+        description: Runs to start one after another while the build keeps stopping at the time budget (0 = this run only)
+        type: number
+        default: 12
 
 permissions:
   contents: write
+  # Start the next run when this one stops at the time budget
+  actions: write
 
 concurrency:
   group: build-${{ github.ref }}
@@ -99,6 +105,9 @@ jobs:
 
       - name: Init and sync sources
         working-directory: /build
+        env:
+          # ci/sync.sh pins sources to the saved out/ state, read with ci/state.sh
+          GH_TOKEN: ${{ github.token }}
         run: |
           mkdir -p src && cd src
           repo init -u https://github.com/crdroidandroid/android.git -b "$LOS_BRANCH" \
@@ -154,6 +163,39 @@ jobs:
             /build/src/out/soong.log
           if-no-files-found: ignore
 
+      # A run that stopped at the time budget saved out/; carry on in a new run
+      # (queued behind this one by the concurrency group) until the build
+      # finishes. Stops on a real build error, a failed save, a full disk or
+      # too little progress, so a broken build does not loop.
+      - name: Start the next run
+        if: ${{ !cancelled() && steps.build.outputs.rc != '' && steps.build.outputs.rc != '0' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RC: ${{ steps.build.outputs.rc }}
+          STATE: ${{ steps.build.outputs.state }}
+          NINJA_MIN: ${{ steps.build.outputs.ninja_min }}
+          PROGRESS: ${{ steps.build.outputs.progress }}
+          DISK_STOP: ${{ steps.build.outputs.disk_stop }}
+          CHAIN_LEFT: ${{ inputs.chain_left }}
+        run: |
+          echo "rc=$RC state=$STATE ninja=${NINJA_MIN}m last progress: $PROGRESS chain_left=$CHAIN_LEFT"
+          chain=${CHAIN_LEFT%.*}; chain=${chain:-0}
+          why=
+          case $RC in 124|130) ;; *) why="the build failed (rc $RC), it was not a time-budget stop" ;; esac
+          [ -z "$why" ] && [ "$DISK_STOP" = true ] && why="the disk filled up; the next run would stop at the same point"
+          [ -z "$why" ] && [ "$STATE" != saved ] && why="out/ was not saved (${STATE:-unknown})"
+          [ -z "$why" ] && [ "${NINJA_MIN:-0}" -lt 20 ] && why="ninja ran only ${NINJA_MIN:-0} min, too little progress"
+          [ -z "$why" ] && [ "$chain" -le 0 ] && why="chain_left is 0"
+          if [ -n "$why" ]; then
+            echo "::warning::Not starting another run: $why"
+            exit 0
+          fi
+          next=$((chain - 1))
+          gh workflow run build.yml -R "$GITHUB_REPOSITORY" --ref "$GITHUB_REF_NAME" \
+            -f variant="${{ inputs.variant }}" -f target="${{ inputs.target }}" \
+            -f wait_for_fix="${{ inputs.wait_for_fix }}" -f chain_left="$next"
+          echo "::notice::Started the next run (chain_left=$next); it waits for this one to finish."
+
       - name: Publish ROM to a release
         if: success()
         working-directory: /build/src/out/target/product/${{ env.DEVICE }}
@@ -166,7 +208,7 @@ jobs:
           for img in boot.img vendor_boot.img dtbo.img recovery.img; do [ -f "$img" ] && files+=("$img"); done
           tag="${DEVICE}-$(date +%Y%m%d)-${{ github.run_number }}"
           gh release create "$tag" "${files[@]}" -R "$GITHUB_REPOSITORY" \
-            --title "crDroid 17.0 $DEVICE $(date +%Y-%m-%d)" --notes "Built by run ${{ github.run_id }} (no MIUI Camera)."
+            --title "crDroid 16.0 $DEVICE $(date +%Y-%m-%d)" --notes "Built by run ${{ github.run_id }} (no MIUI Camera)."
 
       - name: Drop the saved out/ state
         if: success()
