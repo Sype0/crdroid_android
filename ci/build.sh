@@ -45,6 +45,7 @@ publish_status() {
         echo "run: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
         echo "attempt: $1  rc: $2  state: $3  time: $(date -u +%FT%TZ)  minutes_left: $(minutes_left)"
         df -h /build | tail -1
+        mountpoint -q /build/src && df -h /build/src | tail -1
         mountpoint -q /build/src/out && { df -h /build/src/out | tail -1; sudo compsize -x /build/src/out 2>/dev/null | tail -3; }
         echo "---- preparation ----"
         tail -25 /build/prep.log 2>/dev/null

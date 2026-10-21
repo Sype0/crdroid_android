@@ -74,6 +74,17 @@ jobs:
           fi
           sudo fallocate -l "$swap" /swapfile && sudo chmod 600 /swapfile
           sudo mkswap /swapfile && sudo swapon -p 10 /swapfile
+          # The source tree (~85G) goes on a zstd-compressed btrfs volume too:
+          # on the plain disk it left too little room for out/ to finish packaging.
+          mkdir -p /build/src
+          if { command -v mkfs.btrfs > /dev/null || sudo apt-get install -y -qq btrfs-progs btrfs-compsize > /dev/null; } &&
+             truncate -s 300G /build/src.img && mkfs.btrfs -q -f -m single /build/src.img &&
+             sudo mount -o loop,compress-force=zstd:3,noatime,discard=async /build/src.img /build/src; then
+            sudo chown "$USER:$USER" /build/src
+          else
+            echo "::warning::Could not set up a compressed volume for the source tree, using the plain disk"
+            rm -f /build/src.img
+          fi
           df -h; free -h; nproc
 
       - name: Checkout local manifests
