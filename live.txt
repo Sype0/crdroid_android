@@ -1,0 +1,75 @@
+run: https://github.com/Sype0/crdroid_android/actions/runs/39647877474  2026-10-21T19:50:28Z
+               total        used        free      shared  buff/cache   available
+Mem:           15989        1212        7969          26        7179       14776
+Swap:          20479         177       20302
+NAME       TYPE      SIZE   USED PRIO
+/dev/zram0 partition  20G 177.7M  100
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/root       145G   99G   46G  69% /
+/dev/loop1      400G   50G  351G  13% /build/src/out
+---- monitor ----
+/dev/root         147719 106283     41420  72% /
+/dev/root         147719 106283     41420  72% /
+== 19:48:28 load=2.58 9.90 12.28
+Mem:           15989        6097        3980          16        6273        9891
+Swap:          20479        8664       11815
+/dev/root         147719 100858     46846  69% /
+/dev/root         147719 100858     46846  69% /
+== 19:49:28 load=1.53 8.32 11.59
+Mem:           15989        1238        7933          26        7189       14750
+Swap:          20479         178       20301
+/dev/root         147719 100852     46852  69% /
+/dev/root         147719 100852     46852  69% /
+---- preparation ----
+== preparation, attempt 1 18:38:07
+Pruning prebuilts/clang/host/linux-x86/clang-r547379 (keeping: clang-r563880 clang-r563880c)
+Pruning prebuilts/clang/host/linux-x86/clang-r574158 (keeping: clang-r563880 clang-r563880c)
+Normalizing source mtimes
+Saved state: s1792597747.
+Projects changed since the saved state:
+Restoring out/ without the build outputs
+22G	out
+/dev/root       145G   60G   85G  42% /
+/dev/loop1      400G  5.9G  393G   2% /build/src/out
+cts present: yes
+---- build ----
+frameworks/base/core/java/android/content/Intent.java:1971: warning: Invalid @hide syntax, must be a block tag (ErrorWhenNew) [InvalidJavadoc]
+frameworks/base/core/java/android/hardware/Camera.java:2042: warning: Invalid @hide syntax, must be a block tag (ErrorWhenNew) [InvalidJavadoc]
+frameworks/base/core/java/android/hardware/camera2/impl/ExtensionKey.java:24: warning: Invalid @hide syntax, must be a block tag (ErrorWhenNew) [InvalidJavadoc]
+frameworks/base/core/java/android/hardware/camera2/impl/PublicKey.java:26: warning: Invalid @hide syntax, must be a block tag (ErrorWhenNew) [InvalidJavadoc]
+frameworks/base/core/java/android/hardware/camera2/params/StreamConfigurationMap.java:1493: warning: Invalid @hide syntax, must be a block tag (ErrorWhenNew) [InvalidJavadoc]
+frameworks/base/core/java/android/os/BatteryManager.java:172: warning: Invalid @hide syntax, must be a block tag (ErrorWhenNew) [InvalidJavadoc]
+frameworks/base/core/java/com/android/internal/util/DataClass.java:74: warning: Invalid @hide syntax, must be a block tag (ErrorWhenNew) [InvalidJavadoc]
+frameworks/base/media/java/android/media/audiopolicy/AudioMix.java:582: warning: android.media.audiopolicy.AudioMix does not declare a `isInjectSilenceOnStarvation()` method matching method android.media.audiopolicy.AudioMix.Builder.setInjectSilenceOnStarvation(boolean) (ErrorWhenNew) [MissingGetter
+frameworks/base/telephony/java/android/telephony/TelephonyManager.java:4310: warning: Method 'getUiccCardsInfo' documentation duplicates auto-generated documentation by @RequiresPermission. If the permissions are only required under certain circumstances use conditional=true to suppress the auto-doc
+frameworks/libs/modules-utils/java/android/annotation/Hide.java:32: warning: Invalid @hide syntax, must be a block tag (ErrorWhenNew) [InvalidJavadoc]
+out/srcjars/android/app/admin/MultiUserDeviceProvisioningParamsTransport.java:18: warning: Invalid @hide syntax, must be a block tag (ErrorWhenNew) [InvalidJavadoc]
+out/srcjars/android/app/admin/PolicyValueTransport.java:14: warning: Invalid @hide syntax, must be a block tag (ErrorWhenNew) [InvalidJavadoc]
+out/srcjars/android/companion/datatransfer/continuity/IUniversalClipboardManager.java:12: warning: Invalid @hide syntax, must be a block tag (ErrorWhenNew) [InvalidJavadoc]
+metalava wrote updated baseline to /build/src/out/soong/.temp/sbox/1073a982314abb75e649a17771da5e1ec82dbc89/./out/api_lint_baseline.txt
+[ 99% 704/706] //frameworks/base/api:system-api-stubs-docs-non-updatable check current API
+[ 99% 705/706] //frameworks/base/api:test-api-stubs-docs-non-updatable metalava merged
+frameworks/base/core/java/android/adb/ADBRootService.java:26: warning: Invalid @hide syntax, must be a block tag (ErrorWhenNew) [InvalidJavadoc]
+frameworks/base/core/java/android/app/ActivityManager.java:4291: warning: Invalid @hide syntax, must be a block tag (ErrorWhenNew) [InvalidJavadoc]
+frameworks/base/core/java/android/app/AppOpsManager.java:1947: warning: Invalid @hide syntax, must be a block tag (ErrorWhenNew) [InvalidJavadoc]
+frameworks/base/core/java/android/companion/datatransfer/continuity/TaskContinuityManager.java:162: warning: Method 'registerRemoteTaskListener' documentation duplicates auto-generated documentation by @RequiresPermission. If the permissions are only required under certain circumstances use conditio
+frameworks/base/core/java/android/companion/datatransfer/continuity/TaskContinuityManager.java:187: warning: Method 'unregisterRemoteTaskListener' documentation duplicates auto-generated documentation by @RequiresPermission. If the permissions are only required under certain circumstances use condit
+frameworks/base/core/java/android/companion/datatransfer/continuity/TaskContinuityManager.java:209: warning: Method 'requestHandoff' documentation duplicates auto-generated documentation by @RequiresPermission. If the permissions are only required under certain circumstances use conditional=true to 
+frameworks/base/core/java/android/content/BroadcastReceiver.java:684: warning: Invalid @hide syntax, must be a block tag (ErrorWhenNew) [InvalidJavadoc]
+frameworks/base/core/java/android/content/Intent.java:1971: warning: Invalid @hide syntax, must be a block tag (ErrorWhenNew) [InvalidJavadoc]
+frameworks/base/core/java/android/hardware/Camera.java:2042: warning: Invalid @hide syntax, must be a block tag (ErrorWhenNew) [InvalidJavadoc]
+frameworks/base/core/java/android/hardware/camera2/impl/ExtensionKey.java:24: warning: Invalid @hide syntax, must be a block tag (ErrorWhenNew) [InvalidJavadoc]
+frameworks/base/core/java/android/hardware/camera2/impl/PublicKey.java:26: warning: Invalid @hide syntax, must be a block tag (ErrorWhenNew) [InvalidJavadoc]
+frameworks/base/core/java/android/hardware/camera2/params/StreamConfigurationMap.java:1493: warning: Invalid @hide syntax, must be a block tag (ErrorWhenNew) [InvalidJavadoc]
+frameworks/base/core/java/android/os/BatteryManager.java:172: warning: Invalid @hide syntax, must be a block tag (ErrorWhenNew) [InvalidJavadoc]
+frameworks/base/core/java/android/widget/TextView.java:13805: warning: Method taking UserHandle should be named `doFooAsUser` or `queryFooForUser`, was `setEnforceImePolicyUser` (ErrorWhenNew) [UserHandleName]
+frameworks/base/core/java/com/android/internal/util/DataClass.java:74: warning: Invalid @hide syntax, must be a block tag (ErrorWhenNew) [InvalidJavadoc]
+frameworks/libs/modules-utils/java/android/annotation/Hide.java:32: warning: Invalid @hide syntax, must be a block tag (ErrorWhenNew) [InvalidJavadoc]
+out/srcjars/android/app/admin/MultiUserDeviceProvisioningParamsTransport.java:18: warning: Invalid @hide syntax, must be a block tag (ErrorWhenNew) [InvalidJavadoc]
+out/srcjars/android/app/admin/PolicyValueTransport.java:14: warning: Invalid @hide syntax, must be a block tag (ErrorWhenNew) [InvalidJavadoc]
+out/srcjars/android/companion/datatransfer/continuity/IUniversalClipboardManager.java:12: warning: Invalid @hide syntax, must be a block tag (ErrorWhenNew) [InvalidJavadoc]
+metalava wrote updated baseline to /build/src/out/soong/.temp/sbox/256b1fb53f335374d973369fc30e65ea1884a4b2/./out/api_lint_baseline.txt
+[100% 706/706] //frameworks/base/api:test-api-stubs-docs-non-updatable check current API
+
+#### build completed successfully (23:18 (mm:ss)) ####
+
