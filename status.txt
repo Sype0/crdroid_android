@@ -1,0 +1,399 @@
+run: https://github.com/Sype0/crdroid_android/actions/runs/39647877474
+attempt: 1  rc: 0  state: success  time: 2026-10-21T19:48:50Z  minutes_left: 175
+/dev/root       145G   99G   46G  69% /
+/dev/loop0      300G   33G  267G  11% /build/src
+/dev/loop1      400G   50G  351G  13% /build/src/out
+---- preparation ----
+== preparation, attempt 1 18:38:07
+Pruning prebuilts/clang/host/linux-x86/clang-r547379 (keeping: clang-r563880 clang-r563880c)
+Pruning prebuilts/clang/host/linux-x86/clang-r574158 (keeping: clang-r563880 clang-r563880c)
+Normalizing source mtimes
+Saved state: s1792597747.
+Projects changed since the saved state:
+Restoring out/ without the build outputs
+22G	out
+/dev/root       145G   60G   85G  42% /
+/dev/loop1      400G  5.9G  393G   2% /build/src/out
+cts present: yes
+---- errors ----
+4:tr: write error: Broken pipe
+5:cat: write error: Broken pipe
+6-BUILD_USERNAME=android-build
+7-BUILD_HOSTNAME=r-7434828a42dae6f0-ccyg
+8-18:43:34 Build sandboxing disabled due to nsjail error.
+9-Looking for dependencies in device/xiaomi/topaz
+10-
+11-device/xiaomi/topaz has no additional dependencies.
+--
+743:fatal: not a git repository (or any parent up to mount point /build)
+744-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+745:fatal: not a git repository (or any parent up to mount point /build)
+746-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+747:fatal: not a git repository (or any parent up to mount point /build)
+748-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+749:fatal: not a git repository (or any parent up to mount point /build)
+750-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+751:fatal: not a git repository (or any parent up to mount point /build)
+752-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+753:fatal: not a git repository (or any parent up to mount point /build)
+754-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+755:fatal: not a git repository (or any parent up to mount point /build)
+756-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+757:fatal: not a git repository (or any parent up to mount point /build)
+758-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+759:fatal: not a git repository (or any parent up to mount point /build)
+760-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+761:fatal: not a git repository (or any parent up to mount point /build)
+762-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+763:fatal: not a git repository (or any parent up to mount point /build)
+764-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+765:fatal: not a git repository (or any parent up to mount point /build)
+766-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+767:fatal: not a git repository (or any parent up to mount point /build)
+768-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+769:fatal: not a git repository (or any parent up to mount point /build)
+770-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+771:fatal: not a git repository (or any parent up to mount point /build)
+772-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+773:fatal: not a git repository (or any parent up to mount point /build)
+774-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+775:fatal: not a git repository (or any parent up to mount point /build)
+776-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+777:fatal: not a git repository (or any parent up to mount point /build)
+778-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+779:fatal: not a git repository (or any parent up to mount point /build)
+780-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+781:fatal: not a git repository (or any parent up to mount point /build)
+782-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+783:fatal: not a git repository (or any parent up to mount point /build)
+784-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+785:fatal: not a git repository (or any parent up to mount point /build)
+786-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+787:fatal: not a git repository (or any parent up to mount point /build)
+788-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+789:fatal: not a git repository (or any parent up to mount point /build)
+790-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+791:fatal: not a git repository (or any parent up to mount point /build)
+792-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+793:fatal: not a git repository (or any parent up to mount point /build)
+794-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+795:fatal: not a git repository (or any parent up to mount point /build)
+796-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+797:fatal: not a git repository (or any parent up to mount point /build)
+798-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+799:fatal: not a git repository (or any parent up to mount point /build)
+800-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+801:fatal: not a git repository (or any parent up to mount point /build)
+802-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+803:fatal: not a git repository (or any parent up to mount point /build)
+804-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+805:fatal: not a git repository (or any parent up to mount point /build)
+806-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+807:fatal: not a git repository (or any parent up to mount point /build)
+808-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+809:fatal: not a git repository (or any parent up to mount point /build)
+810-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+811:fatal: not a git repository (or any parent up to mount point /build)
+812-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+813:fatal: not a git repository (or any parent up to mount point /build)
+814-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+815:fatal: not a git repository (or any parent up to mount point /build)
+816-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+817:fatal: not a git repository (or any parent up to mount point /build)
+818-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+819:fatal: not a git repository (or any parent up to mount point /build)
+820-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+821:fatal: not a git repository (or any parent up to mount point /build)
+822-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+823:fatal: not a git repository (or any parent up to mount point /build)
+824-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+825:fatal: not a git repository (or any parent up to mount point /build)
+826-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+827:fatal: not a git repository (or any parent up to mount point /build)
+828-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+829:fatal: not a git repository (or any parent up to mount point /build)
+830-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+831:fatal: not a git repository (or any parent up to mount point /build)
+832-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+833:fatal: not a git repository (or any parent up to mount point /build)
+834-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+835:fatal: not a git repository (or any parent up to mount point /build)
+836-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+837:fatal: not a git repository (or any parent up to mount point /build)
+838-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+839:fatal: not a git repository (or any parent up to mount point /build)
+840-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+841:fatal: not a git repository (or any parent up to mount point /build)
+842-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+843:fatal: not a git repository (or any parent up to mount point /build)
+844-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+845:fatal: not a git repository (or any parent up to mount point /build)
+846-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+847:fatal: not a git repository (or any parent up to mount point /build)
+848-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+849:fatal: not a git repository (or any parent up to mount point /build)
+850-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+851:fatal: not a git repository (or any parent up to mount point /build)
+852-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+853:fatal: not a git repository (or any parent up to mount point /build)
+854-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+855:fatal: not a git repository (or any parent up to mount point /build)
+856-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+857:fatal: not a git repository (or any parent up to mount point /build)
+858-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+859:fatal: not a git repository (or any parent up to mount point /build)
+860-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+861:fatal: not a git repository (or any parent up to mount point /build)
+862-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+863:fatal: not a git repository (or any parent up to mount point /build)
+864-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+865:fatal: not a git repository (or any parent up to mount point /build)
+866-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+867:fatal: not a git repository (or any parent up to mount point /build)
+868-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+869:fatal: not a git repository (or any parent up to mount point /build)
+870-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+871:fatal: not a git repository (or any parent up to mount point /build)
+872-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+873:fatal: not a git repository (or any parent up to mount point /build)
+874-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+875:fatal: not a git repository (or any parent up to mount point /build)
+876-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+877:fatal: not a git repository (or any parent up to mount point /build)
+878-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+879:fatal: not a git repository (or any parent up to mount point /build)
+880-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+881:fatal: not a git repository (or any parent up to mount point /build)
+882-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+883:fatal: not a git repository (or any parent up to mount point /build)
+884-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+885:fatal: not a git repository (or any parent up to mount point /build)
+886-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+887:fatal: not a git repository (or any parent up to mount point /build)
+888-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+889:fatal: not a git repository (or any parent up to mount point /build)
+890-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+891:fatal: not a git repository (or any parent up to mount point /build)
+892-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+893:fatal: not a git repository (or any parent up to mount point /build)
+894-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+895:fatal: not a git repository (or any parent up to mount point /build)
+896-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+897:fatal: not a git repository (or any parent up to mount point /build)
+898-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+899:fatal: not a git repository (or any parent up to mount point /build)
+900-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+901:fatal: not a git repository (or any parent up to mount point /build)
+902-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+903:fatal: not a git repository (or any parent up to mount point /build)
+904-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+905:fatal: not a git repository (or any parent up to mount point /build)
+906-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+907:fatal: not a git repository (or any parent up to mount point /build)
+908-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+909:fatal: not a git repository (or any parent up to mount point /build)
+910-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+911:fatal: not a git repository (or any parent up to mount point /build)
+912-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+913:fatal: not a git repository (or any parent up to mount point /build)
+914-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+915:fatal: not a git repository (or any parent up to mount point /build)
+916-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+917:fatal: not a git repository (or any parent up to mount point /build)
+918-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+919:fatal: not a git repository (or any parent up to mount point /build)
+920-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+921:fatal: not a git repository (or any parent up to mount point /build)
+922-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+923:fatal: not a git repository (or any parent up to mount point /build)
+924-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+925:fatal: not a git repository (or any parent up to mount point /build)
+926-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+927:fatal: not a git repository (or any parent up to mount point /build)
+928-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+929:fatal: not a git repository (or any parent up to mount point /build)
+930-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+931:fatal: not a git repository (or any parent up to mount point /build)
+932-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+933:fatal: not a git repository (or any parent up to mount point /build)
+934-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+935:fatal: not a git repository (or any parent up to mount point /build)
+936-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+937:fatal: not a git repository (or any parent up to mount point /build)
+938-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+939:fatal: not a git repository (or any parent up to mount point /build)
+940-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+941:fatal: not a git repository (or any parent up to mount point /build)
+942-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+943:fatal: not a git repository (or any parent up to mount point /build)
+944-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+945:fatal: not a git repository (or any parent up to mount point /build)
+946-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+947:fatal: not a git repository (or any parent up to mount point /build)
+948-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+949:fatal: not a git repository (or any parent up to mount point /build)
+950-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+951:fatal: not a git repository (or any parent up to mount point /build)
+952-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+953:fatal: not a git repository (or any parent up to mount point /build)
+954-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+955:fatal: not a git repository (or any parent up to mount point /build)
+956-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+957:fatal: not a git repository (or any parent up to mount point /build)
+958-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+959:fatal: not a git repository (or any parent up to mount point /build)
+960-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+961:fatal: not a git repository (or any parent up to mount point /build)
+962-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+963:fatal: not a git repository (or any parent up to mount point /build)
+964-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+965:fatal: not a git repository (or any parent up to mount point /build)
+966-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+967:fatal: not a git repository (or any parent up to mount point /build)
+968-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+969:fatal: not a git repository (or any parent up to mount point /build)
+970-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+971:fatal: not a git repository (or any parent up to mount point /build)
+972-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+973:fatal: not a git repository (or any parent up to mount point /build)
+974-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+975:fatal: not a git repository (or any parent up to mount point /build)
+976-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+977:fatal: not a git repository (or any parent up to mount point /build)
+978-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+979:fatal: not a git repository (or any parent up to mount point /build)
+980-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+981:fatal: not a git repository (or any parent up to mount point /build)
+982-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+983:fatal: not a git repository (or any parent up to mount point /build)
+984-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+985:fatal: not a git repository (or any parent up to mount point /build)
+986-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+987:fatal: not a git repository (or any parent up to mount point /build)
+988-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+989:fatal: not a git repository (or any parent up to mount point /build)
+990-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+991:fatal: not a git repository (or any parent up to mount point /build)
+992-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+993:fatal: not a git repository (or any parent up to mount point /build)
+994-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+995:fatal: not a git repository (or any parent up to mount point /build)
+996-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+997:fatal: not a git repository (or any parent up to mount point /build)
+998-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+999:fatal: not a git repository (or any parent up to mount point /build)
+1000-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+1001:fatal: not a git repository (or any parent up to mount point /build)
+1002-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+1003:fatal: not a git repository (or any parent up to mount point /build)
+1004-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+1005:fatal: not a git repository (or any parent up to mount point /build)
+1006-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+1007:fatal: not a git repository (or any parent up to mount point /build)
+1008-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+1009:fatal: not a git repository (or any parent up to mount point /build)
+1010-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+1011:fatal: not a git repository (or any parent up to mount point /build)
+1012-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+1013:fatal: not a git repository (or any parent up to mount point /build)
+1014-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+1015:fatal: not a git repository (or any parent up to mount point /build)
+1016-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+1017:fatal: not a git repository (or any parent up to mount point /build)
+1018-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+1019:fatal: not a git repository (or any parent up to mount point /build)
+1020-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+1021:fatal: not a git repository (or any parent up to mount point /build)
+1022-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+1023:fatal: not a git repository (or any parent up to mount point /build)
+1024-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+1025:fatal: not a git repository (or any parent up to mount point /build)
+1026-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+1027:fatal: not a git repository (or any parent up to mount point /build)
+1028-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+1029:fatal: not a git repository (or any parent up to mount point /build)
+1030-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+1031:fatal: not a git repository (or any parent up to mount point /build)
+1032-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+1033:fatal: not a git repository (or any parent up to mount point /build)
+---- tail ----
+[ 98% 692/706] //system/core/libutils/binder:libutils_binder header-abi-dumper StrongPointer.cpp
+[ 98% 693/706] //system/core/libutils/binder:libutils_binder header-abi-dumper Unicode.cpp
+[ 98% 694/706] //system/core/libutils/binder:libutils_binder header-abi-dumper String8.cpp
+[ 98% 695/706] cp if changed out/soong/.intermediates/release_configs/duplicate_allowlist.list
+[ 98% 696/706] out/host/linux-x86/bin/build-flag-internal --maps-file out/soong/.intermediates/release_configs/release_config_map.list --quiet --declarations-only get && date > out/soong/.intermediates/release_configs/release_config_map.timestamp
+[ 98% 697/706] touch out/soong/ndk_abi_dump.timestamp
+[ 98% 698/706] touch out/soong/ndk_abi_diff.timestamp
+[ 99% 699/706] //system/core/libutils/binder:libutils_binder header-abi-dumper String16.cpp
+[ 99% 700/706] //system/core/libutils/binder:libutils_binder header-abi-dumper VectorImpl.cpp
+[ 99% 701/706] //system/core/libutils:libutils header-abi-linker libutils.so.lsdump
+[ 99% 702/706] //system/core/libutils:libutils header-abi-diff libutils.so.opt0.abidiff
+[ 99% 703/706] //frameworks/base/api:system-api-stubs-docs-non-updatable metalava merged
+frameworks/base/core/java/android/accounts/AccountManager.java:581: warning: Method 'getPassword' documentation duplicates auto-generated documentation by @RequiresPermission. If the permissions are only required under certain circumstances use conditional=true to suppress the auto-documentation (ErrorWhenNew) [RequiresPermission]
+frameworks/base/core/java/android/accounts/AccountManager.java:611: warning: Method 'getUserData' documentation duplicates auto-generated documentation by @RequiresPermission. If the permissions are only required under certain circumstances use conditional=true to suppress the auto-documentation (ErrorWhenNew) [RequiresPermission]
+frameworks/base/core/java/android/accounts/AccountManager.java:802: warning: Method 'getAccountsByType' documentation duplicates auto-generated documentation by @RequiresPermission. If the permissions are only required under certain circumstances use conditional=true to suppress the auto-documentation (ErrorWhenNew) [RequiresPermission]
+frameworks/base/core/java/android/accounts/AccountManager.java:1010: warning: Method 'addAccountExplicitly' documentation duplicates auto-generated documentation by @RequiresPermission. If the permissions are only required under certain circumstances use conditional=true to suppress the auto-documentation (ErrorWhenNew) [RequiresPermission]
+frameworks/base/core/java/android/accounts/AccountManager.java:1223: warning: Method 'renameAccount' documentation duplicates auto-generated documentation by @RequiresPermission. If the permissions are only required under certain circumstances use conditional=true to suppress the auto-documentation (ErrorWhenNew) [RequiresPermission]
+frameworks/base/core/java/android/accounts/AccountManager.java:1294: warning: Method 'removeAccount' documentation duplicates auto-generated documentation by @RequiresPermission. If the permissions are only required under certain circumstances use conditional=true to suppress the auto-documentation (ErrorWhenNew) [RequiresPermission]
+frameworks/base/core/java/android/accounts/AccountManager.java:1416: warning: Method 'removeAccountExplicitly' documentation duplicates auto-generated documentation by @RequiresPermission. If the permissions are only required under certain circumstances use conditional=true to suppress the auto-documentation (ErrorWhenNew) [RequiresPermission]
+frameworks/base/core/java/android/accounts/AccountManager.java:1441: warning: Method 'invalidateAuthToken' documentation duplicates auto-generated documentation by @RequiresPermission. If the permissions are only required under certain circumstances use conditional=true to suppress the auto-documentation (ErrorWhenNew) [RequiresPermission]
+frameworks/base/core/java/android/accounts/AccountManager.java:1473: warning: Method 'peekAuthToken' documentation duplicates auto-generated documentation by @RequiresPermission. If the permissions are only required under certain circumstances use conditional=true to suppress the auto-documentation (ErrorWhenNew) [RequiresPermission]
+frameworks/base/core/java/android/accounts/AccountManager.java:1503: warning: Method 'setPassword' documentation duplicates auto-generated documentation by @RequiresPermission. If the permissions are only required under certain circumstances use conditional=true to suppress the auto-documentation (ErrorWhenNew) [RequiresPermission]
+frameworks/base/core/java/android/accounts/AccountManager.java:1531: warning: Method 'clearPassword' documentation duplicates auto-generated documentation by @RequiresPermission. If the permissions are only required under certain circumstances use conditional=true to suppress the auto-documentation (ErrorWhenNew) [RequiresPermission]
+frameworks/base/core/java/android/accounts/AccountManager.java:1558: warning: Method 'setUserData' documentation duplicates auto-generated documentation by @RequiresPermission. If the permissions are only required under certain circumstances use conditional=true to suppress the auto-documentation (ErrorWhenNew) [RequiresPermission]
+frameworks/base/core/java/android/accounts/AccountManager.java:1587: warning: Method 'setAuthToken' documentation duplicates auto-generated documentation by @RequiresPermission. If the permissions are only required under certain circumstances use conditional=true to suppress the auto-documentation (ErrorWhenNew) [RequiresPermission]
+frameworks/base/core/java/android/accounts/AccountManager.java:1621: warning: Method 'blockingGetAuthToken' documentation duplicates auto-generated documentation by @RequiresPermission. If the permissions are only required under certain circumstances use conditional=true to suppress the auto-documentation (ErrorWhenNew) [RequiresPermission]
+frameworks/base/core/java/android/accounts/AccountManager.java:1696: warning: Method 'getAuthToken' documentation duplicates auto-generated documentation by @RequiresPermission. If the permissions are only required under certain circumstances use conditional=true to suppress the auto-documentation (ErrorWhenNew) [RequiresPermission]
+frameworks/base/core/java/android/accounts/AccountManager.java:1865: warning: Method 'getAuthToken' documentation duplicates auto-generated documentation by @RequiresPermission. If the permissions are only required under certain circumstances use conditional=true to suppress the auto-documentation (ErrorWhenNew) [RequiresPermission]
+frameworks/base/core/java/android/accounts/AccountManager.java:1937: warning: Method 'addAccount' documentation duplicates auto-generated documentation by @RequiresPermission. If the permissions are only required under certain circumstances use conditional=true to suppress the auto-documentation (ErrorWhenNew) [RequiresPermission]
+frameworks/base/core/java/android/accounts/AccountManager.java:2109: warning: Method 'confirmCredentials' documentation duplicates auto-generated documentation by @RequiresPermission. If the permissions are only required under certain circumstances use conditional=true to suppress the auto-documentation (ErrorWhenNew) [RequiresPermission]
+frameworks/base/core/java/android/accounts/AccountManager.java:2188: warning: Method 'updateCredentials' documentation duplicates auto-generated documentation by @RequiresPermission. If the permissions are only required under certain circumstances use conditional=true to suppress the auto-documentation (ErrorWhenNew) [RequiresPermission]
+frameworks/base/core/java/android/accounts/AccountManager.java:2244: warning: Method 'editProperties' documentation duplicates auto-generated documentation by @RequiresPermission. If the permissions are only required under certain circumstances use conditional=true to suppress the auto-documentation (ErrorWhenNew) [RequiresPermission]
+frameworks/base/core/java/android/accounts/AccountManager.java:2810: warning: Method 'getAuthTokenByFeatures' documentation duplicates auto-generated documentation by @RequiresPermission. If the permissions are only required under certain circumstances use conditional=true to suppress the auto-documentation (ErrorWhenNew) [RequiresPermission]
+frameworks/base/core/java/android/adb/ADBRootService.java:26: warning: Invalid @hide syntax, must be a block tag (ErrorWhenNew) [InvalidJavadoc]
+frameworks/base/core/java/android/app/ActivityManager.java:4291: warning: Invalid @hide syntax, must be a block tag (ErrorWhenNew) [InvalidJavadoc]
+frameworks/base/core/java/android/app/AppOpsManager.java:1947: warning: Invalid @hide syntax, must be a block tag (ErrorWhenNew) [InvalidJavadoc]
+frameworks/base/core/java/android/companion/datatransfer/continuity/TaskContinuityManager.java:162: warning: Method 'registerRemoteTaskListener' documentation duplicates auto-generated documentation by @RequiresPermission. If the permissions are only required under certain circumstances use conditional=true to suppress the auto-documentation (ErrorWhenNew) [RequiresPermission]
+frameworks/base/core/java/android/companion/datatransfer/continuity/TaskContinuityManager.java:187: warning: Method 'unregisterRemoteTaskListener' documentation duplicates auto-generated documentation by @RequiresPermission. If the permissions are only required under certain circumstances use conditional=true to suppress the auto-documentation (ErrorWhenNew) [RequiresPermission]
+frameworks/base/core/java/android/companion/datatransfer/continuity/TaskContinuityManager.java:209: warning: Method 'requestHandoff' documentation duplicates auto-generated documentation by @RequiresPermission. If the permissions are only required under certain circumstances use conditional=true to suppress the auto-documentation (ErrorWhenNew) [RequiresPermission]
+frameworks/base/core/java/android/content/BroadcastReceiver.java:684: warning: Invalid @hide syntax, must be a block tag (ErrorWhenNew) [InvalidJavadoc]
+frameworks/base/core/java/android/content/Intent.java:1971: warning: Invalid @hide syntax, must be a block tag (ErrorWhenNew) [InvalidJavadoc]
+frameworks/base/core/java/android/hardware/Camera.java:2042: warning: Invalid @hide syntax, must be a block tag (ErrorWhenNew) [InvalidJavadoc]
+frameworks/base/core/java/android/hardware/camera2/impl/ExtensionKey.java:24: warning: Invalid @hide syntax, must be a block tag (ErrorWhenNew) [InvalidJavadoc]
+frameworks/base/core/java/android/hardware/camera2/impl/PublicKey.java:26: warning: Invalid @hide syntax, must be a block tag (ErrorWhenNew) [InvalidJavadoc]
+frameworks/base/core/java/android/hardware/camera2/params/StreamConfigurationMap.java:1493: warning: Invalid @hide syntax, must be a block tag (ErrorWhenNew) [InvalidJavadoc]
+frameworks/base/core/java/android/os/BatteryManager.java:172: warning: Invalid @hide syntax, must be a block tag (ErrorWhenNew) [InvalidJavadoc]
+frameworks/base/core/java/com/android/internal/util/DataClass.java:74: warning: Invalid @hide syntax, must be a block tag (ErrorWhenNew) [InvalidJavadoc]
+frameworks/base/media/java/android/media/audiopolicy/AudioMix.java:582: warning: android.media.audiopolicy.AudioMix does not declare a `isInjectSilenceOnStarvation()` method matching method android.media.audiopolicy.AudioMix.Builder.setInjectSilenceOnStarvation(boolean) (ErrorWhenNew) [MissingGetterMatchingBuilder]
+frameworks/base/telephony/java/android/telephony/TelephonyManager.java:4310: warning: Method 'getUiccCardsInfo' documentation duplicates auto-generated documentation by @RequiresPermission. If the permissions are only required under certain circumstances use conditional=true to suppress the auto-documentation (ErrorWhenNew) [RequiresPermission]
+frameworks/libs/modules-utils/java/android/annotation/Hide.java:32: warning: Invalid @hide syntax, must be a block tag (ErrorWhenNew) [InvalidJavadoc]
+out/srcjars/android/app/admin/MultiUserDeviceProvisioningParamsTransport.java:18: warning: Invalid @hide syntax, must be a block tag (ErrorWhenNew) [InvalidJavadoc]
+out/srcjars/android/app/admin/PolicyValueTransport.java:14: warning: Invalid @hide syntax, must be a block tag (ErrorWhenNew) [InvalidJavadoc]
+out/srcjars/android/companion/datatransfer/continuity/IUniversalClipboardManager.java:12: warning: Invalid @hide syntax, must be a block tag (ErrorWhenNew) [InvalidJavadoc]
+metalava wrote updated baseline to /build/src/out/soong/.temp/sbox/1073a982314abb75e649a17771da5e1ec82dbc89/./out/api_lint_baseline.txt
+[ 99% 704/706] //frameworks/base/api:system-api-stubs-docs-non-updatable check current API
+[ 99% 705/706] //frameworks/base/api:test-api-stubs-docs-non-updatable metalava merged
+frameworks/base/core/java/android/adb/ADBRootService.java:26: warning: Invalid @hide syntax, must be a block tag (ErrorWhenNew) [InvalidJavadoc]
+frameworks/base/core/java/android/app/ActivityManager.java:4291: warning: Invalid @hide syntax, must be a block tag (ErrorWhenNew) [InvalidJavadoc]
+frameworks/base/core/java/android/app/AppOpsManager.java:1947: warning: Invalid @hide syntax, must be a block tag (ErrorWhenNew) [InvalidJavadoc]
+frameworks/base/core/java/android/companion/datatransfer/continuity/TaskContinuityManager.java:162: warning: Method 'registerRemoteTaskListener' documentation duplicates auto-generated documentation by @RequiresPermission. If the permissions are only required under certain circumstances use conditional=true to suppress the auto-documentation (ErrorWhenNew) [RequiresPermission]
+frameworks/base/core/java/android/companion/datatransfer/continuity/TaskContinuityManager.java:187: warning: Method 'unregisterRemoteTaskListener' documentation duplicates auto-generated documentation by @RequiresPermission. If the permissions are only required under certain circumstances use conditional=true to suppress the auto-documentation (ErrorWhenNew) [RequiresPermission]
+frameworks/base/core/java/android/companion/datatransfer/continuity/TaskContinuityManager.java:209: warning: Method 'requestHandoff' documentation duplicates auto-generated documentation by @RequiresPermission. If the permissions are only required under certain circumstances use conditional=true to suppress the auto-documentation (ErrorWhenNew) [RequiresPermission]
+frameworks/base/core/java/android/content/BroadcastReceiver.java:684: warning: Invalid @hide syntax, must be a block tag (ErrorWhenNew) [InvalidJavadoc]
+frameworks/base/core/java/android/content/Intent.java:1971: warning: Invalid @hide syntax, must be a block tag (ErrorWhenNew) [InvalidJavadoc]
+frameworks/base/core/java/android/hardware/Camera.java:2042: warning: Invalid @hide syntax, must be a block tag (ErrorWhenNew) [InvalidJavadoc]
+frameworks/base/core/java/android/hardware/camera2/impl/ExtensionKey.java:24: warning: Invalid @hide syntax, must be a block tag (ErrorWhenNew) [InvalidJavadoc]
+frameworks/base/core/java/android/hardware/camera2/impl/PublicKey.java:26: warning: Invalid @hide syntax, must be a block tag (ErrorWhenNew) [InvalidJavadoc]
+frameworks/base/core/java/android/hardware/camera2/params/StreamConfigurationMap.java:1493: warning: Invalid @hide syntax, must be a block tag (ErrorWhenNew) [InvalidJavadoc]
+frameworks/base/core/java/android/os/BatteryManager.java:172: warning: Invalid @hide syntax, must be a block tag (ErrorWhenNew) [InvalidJavadoc]
+frameworks/base/core/java/android/widget/TextView.java:13805: warning: Method taking UserHandle should be named `doFooAsUser` or `queryFooForUser`, was `setEnforceImePolicyUser` (ErrorWhenNew) [UserHandleName]
+frameworks/base/core/java/com/android/internal/util/DataClass.java:74: warning: Invalid @hide syntax, must be a block tag (ErrorWhenNew) [InvalidJavadoc]
+frameworks/libs/modules-utils/java/android/annotation/Hide.java:32: warning: Invalid @hide syntax, must be a block tag (ErrorWhenNew) [InvalidJavadoc]
+out/srcjars/android/app/admin/MultiUserDeviceProvisioningParamsTransport.java:18: warning: Invalid @hide syntax, must be a block tag (ErrorWhenNew) [InvalidJavadoc]
+out/srcjars/android/app/admin/PolicyValueTransport.java:14: warning: Invalid @hide syntax, must be a block tag (ErrorWhenNew) [InvalidJavadoc]
+out/srcjars/android/companion/datatransfer/continuity/IUniversalClipboardManager.java:12: warning: Invalid @hide syntax, must be a block tag (ErrorWhenNew) [InvalidJavadoc]
+metalava wrote updated baseline to /build/src/out/soong/.temp/sbox/256b1fb53f335374d973369fc30e65ea1884a4b2/./out/api_lint_baseline.txt
+[100% 706/706] //frameworks/base/api:test-api-stubs-docs-non-updatable check current API
+
+#### build completed successfully (23:18 (mm:ss)) ####
+
