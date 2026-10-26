@@ -9,7 +9,7 @@
     <!-- Main Trees From BaranAspect -->
     <project name="Sype0/android_device_xiaomi_topaz" path="device/xiaomi/topaz" remote="gh" revision="lineage-23.2" />
     <project name="Sype0/android_vendor_xiaomi_topaz" path="vendor/xiaomi/topaz" remote="gh" revision="lineage-23.2" />
-    <project name="BaranAspect-Development/android_kernel_xiaomi_topaz" path="device/xiaomi/topaz-kernel" remote="gh" revision="lineage-23.0" />
+    <project name="Sype0/android_kernel_xiaomi_topaz" path="device/xiaomi/topaz-kernel" remote="gh" revision="lineage-23.0" />
 
     <!-- LineageOS Xiaomi SEPolicy Trees -->
     <project name="Sype0/android_device_qcom_sepolicy_vndr_sm6225" path="device/qcom/sepolicy_vndr/sm6225" remote="gh" revision="lineage-23.2" />
