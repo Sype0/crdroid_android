@@ -1,0 +1,144 @@
+run: https://github.com/Sype0/crdroid_android/actions/runs/41212335059
+attempt: 1  rc: 124  state: state-saved  time: 2026-10-31T19:52:54Z  minutes_left: -7
+/dev/root       145G   49G   96G  34% /
+/dev/loop0      300G   35G  264G  12% /build/src
+---- preparation ----
+== preparation, attempt 1 15:29:20
+prebuilts/clang/host/linux-x86/clang-r574158 is not in the synced tree, assuming it is unused
+Pruning prebuilts/clang/host/linux-x86/clang-r547379 (keeping: clang-r574158 clang-r584948 clang-r584948b clang-r596125)
+Pruning prebuilts/clang/host/linux-x86/clang-r563880c (keeping: clang-r574158 clang-r584948 clang-r584948b clang-r596125)
+Pruning prebuilts/rust-toolchain/linux-musl-x86/1.91.1 (default is 1.93.1)
+Pruning prebuilts/rust-toolchain/linux-musl-x86/1.92.0 (default is 1.93.1)
+Pruning prebuilts/rust-toolchain/linux-x86/1.91.1 (default is 1.93.1)
+Pruning prebuilts/rust-toolchain/linux-x86/1.92.0 (default is 1.93.1)
+Normalizing source mtimes
+Saved state: s1793458230.
+Projects changed since the saved state:
+Restoring out/ without the build outputs
+12G	out
+/dev/root       145G   60G   86G  42% /
+/dev/loop1      400G  714M  398G   1% /build/src/out
+cts present: yes
+---- errors ----
+15587:[  9% 12916/136502] //external/rust/android-crates-io/crates/thiserror:libthiserror license metadata [apex34]
+15588-[  9% 12917/136502] //frameworks/base/libs/storage:libstorage clang++ ObbInfo.cpp
+15589-[  9% 12918/136502] //external/rust/android-crates-io/crates/tinystr:libtinystr rustc src/lib.rs [apex31]
+15590-[  9% 12919/136502] //external/rust/android-crates-io/crates/tokio:libtokio license metadata [apex31]
+15591-[  9% 12920/136502] //frameworks/native/libs/ui:libui-types license metadata [apex31]
+15592-[  9% 12921/136502] //frameworks/native/libs/ui:libui_flags_cc license metadata [apex31]
+15593-[  9% 12922/136502] //frameworks/native/libs/ui:libui_headers license metadata [apex31]
+--
+20129:[ 12% 16524/136502] //external/rust/android-crates-io/crates/thiserror:libthiserror raw libthiserror.rlib.soong_deps [apex34]
+20130-[ 12% 16525/136502] //external/rust/android-crates-io/crates/tinystr:libtinystr license metadata [apex10000]
+20131-[ 12% 16526/136502] //external/rust/android-crates-io/crates/tinystr:libtinystr license metadata [apex10000]
+20132-[ 12% 16527/136502] //frameworks/native/libs/ui:libui license metadata [apex31]
+20133-[ 12% 16528/136502] //external/rust/android-crates-io/crates/unicode-bidi:libunicode_bidi raw libunicode_bidi.rlib.soong_deps [apex31]
+20134-[ 12% 16529/136502] //prebuilts/clang/host/linux-x86:libunwind license metadata [apex34]
+20135-[ 12% 16530/136502] //external/rust/android-crates-io/crates/url:liburl license metadata [apex31]
+--
+23929:[ 14% 19949/136502] //external/rust/android-crates-io/crates/thiserror:libthiserror rustc src/lib.rs [apex34]
+23930-[ 14% 19950/136502] //system/core/libutils:libutils clang++ FileMap.cpp [apex10000_p]
+23931-[ 14% 19951/136502] //system/core/libutils:libutils clang++ JenkinsHash.cpp [apex10000_p]
+23932-[ 14% 19952/136502] //system/core/libutils:libutils clang++ LightRefBase.cpp [apex10000_p]
+23933-[ 14% 19953/136502] //system/core/libsysutils:libsysutils clang++ src/ServiceManager.cpp
+23934-[ 14% 19954/136502] //system/core/libutils:libutils clang++ StopWatch.cpp [apex10000_p]
+23935-[ 14% 19955/136502] //system/core/libutils:libutils clang++ SystemClock.cpp [apex10000_p]
+--
+28639:[ 17% 23889/136502] //external/rust/android-crates-io/crates/thiserror:libthiserror license metadata [apex36]
+28640:[ 17% 23890/136502] //external/rust/android-crates-io/crates/thiserror:libthiserror license metadata [apex10000_p]
+28641:[ 17% 23891/136502] //external/rust/android-crates-io/crates/thiserror:libthiserror license metadata [apex33]
+28642-[ 17% 23892/136502] //packages/modules/Connectivity/common:libthreadflags license metadata
+28643-[ 17% 23893/136502] //packages/modules/Connectivity/common:libthreadflags license metadata [apex31]
+28644-[ 17% 23894/136502] //external/rust/android-crates-io/crates/tinystr:libtinystr raw libtinystr.rlib.soong_deps [apex10000]
+28645-[ 17% 23895/136502] //external/rust/android-crates-io/crates/tinystr:libtinystr raw libtinystr.rlib.soong_deps [apex10000]
+28646-[ 17% 23896/136502] //external/rust/android-crates-io/crates/tinystr:libtinystr raw libtinystr.rlib.soong_deps
+28647-[ 17% 23897/136502] //external/rust/android-crates-io/crates/tokio:libtokio raw libtokio.rlib.soong_deps [apex36]
+--
+49228:frameworks/base/packages/SystemUI/src/com/android/systemui/temporarydisplay/TemporaryViewDisplayController.kt:90:43: warning: 'static field TYPE_SYSTEM_ERROR: Int' is deprecated. Deprecated in Java.
+49229-        type = WindowManager.LayoutParams.TYPE_SYSTEM_ERROR
+49230-                                          ^^^^^^^^^^^^^^^^^
+49231-frameworks/base/packages/SystemUI/src/com/android/systemui/temporarydisplay/TemporaryViewDisplayController.kt:218:45: warning: 'val isScreenOn: Boolean' is deprecated. Deprecated in Java.
+49232-        val newWakeLock = if (!powerManager.isScreenOn) {
+49233-                                            ^^^^^^^^^^
+49234-frameworks/base/packages/SystemUI/src/com/android/systemui/temporarydisplay/TemporaryViewDisplayController.kt:223:34: warning: 'static field FULL_WAKE_LOCK: Int' is deprecated. Deprecated in Java.
+---- tail ----
+[ 21% 29720/136502] //external/private-join-and-compute:libpjc_crypto clang++ proto/external/private-join-and-compute/private_join_and_compute/crypto/proto/ec_point.pb.cc [apex31]
+[ 21% 29721/136502] //external/private-join-and-compute:libpjc_crypto clang++ proto/external/private-join-and-compute/private_join_and_compute/crypto/proto/pedersen.pb.cc [apex31]
+[ 21% 29722/136502] //external/private-join-and-compute:libpjc_crypto clang++ private_join_and_compute/crypto/proto/proto_util.cc [apex31]
+[ 21% 29723/136502] //external/libpng:libpng strip libpng.so [apex31]
+[ 21% 29724/136502] //external/rust/android-crates-io/crates/potential_utf:libpotential_utf raw libpotential_utf.rlib.soong_deps [apex10000]
+[ 21% 29725/136502] //external/rust/android-crates-io/crates/potential_utf:libpotential_utf raw libpotential_utf.rlib.soong_deps [apex10000]
+[ 21% 29726/136502] //external/rust/android-crates-io/crates/potential_utf:libpotential_utf raw libpotential_utf.rlib.soong_deps
+[ 21% 29727/136502] //external/private-join-and-compute:libpjc_crypto clang++ private_join_and_compute/crypto/shanks_discrete_log.cc [apex31]
+[ 21% 29728/136502] //hardware/libhardware_legacy:libpower clang++ power.cpp
+[ 21% 29729/136502] //external/rust/android-crates-io/crates/ppv-lite86:libppv_lite86 rustc src/lib.rs [apex31]
+[ 21% 29730/136502] //external/rust/android-crates-io/crates/predicates:libpredicates raw libpredicates.rlib.soong_deps [apex10000_p]
+[ 21% 29731/136502] //external/rust/android-crates-io/crates/ppv-lite86:libppv_lite86 rustc src/lib.rs [apex36]
+[ 21% 29732/136502] //external/rust/android-crates-io/crates/predicates-core:libpredicates_core rustc src/lib.rs [apex10000_p]
+[ 21% 29733/136502] //external/rust/android-crates-io/crates/predicates-tree:libpredicates_tree raw libpredicates_tree.rlib.soong_deps [apex10000_p]
+[ 21% 29734/136502] //external/private-join-and-compute:libpjc_crypto clang++ private_join_and_compute/crypto/two_modulus_crt.cc [apex31]
+[ 21% 29735/136502] //external/private-join-and-compute:libpjc_crypto clang++ private_join_and_compute/crypto/simultaneous_fixed_bases_exp.cc [apex31]
+[ 21% 29736/136502] //system/core/libprocessgroup/util:libprocessgroup_util clang++ cgroup_controller.cpp [apex31]
+[ 21% 29737/136502] //external/rust/android-crates-io/crates/predicates-tree:libpredicates_tree rustc src/lib.rs [apex36]
+[ 21% 29738/136502] //system/core/libprocessgroup/util:libprocessgroup_util clang++ cgroup_descriptor.cpp [apex31]
+[ 21% 29739/136502] //external/rust/android-crates-io/crates/predicates:libpredicates rustc src/lib.rs [apex36]
+[ 21% 29740/136502] //prebuilts/rust-toolchain/linux-x86:libprofiler_builtins.rust_sysroot raw libprofiler_builtins.rust_sysroot.rlib.soong_deps [apex10000]
+[ 21% 29741/136502] //prebuilts/rust-toolchain/linux-x86:libprofiler_builtins.rust_sysroot license metadata [apex10000]
+[ 21% 29742/136502] //system/core/libprocessgroup/util:libprocessgroup_util clang++ util.cpp [apex31]
+[ 21% 29743/136502] //art/libprofile:libprofile clang++ profile/profile_boot_info.cc [linux_glibc]
+[ 21% 29744/136502] //external/protobuf:libprotobuf-cpp-lite license metadata [apex31]
+[ 21% 29745/136502] //external/protobuf:libprotobuf-cpp-lite license metadata [apex31]
+[ 21% 29746/136502] //external/protobuf:libprotobuf-cpp-lite-ndk clang++ src/google/protobuf/any_lite.cc [apex31]
+[ 21% 29747/136502] //art/libprofile:libprofile clang++ profile/profile_compilation_info.cc [linux_glibc]
+[ 21% 29748/136502] //external/protobuf:libprotobuf-cpp-lite-ndk clang++ src/google/protobuf/arena.cc [apex31]
+[ 21% 29749/136502] //external/protobuf:libprotobuf-cpp-lite-ndk clang++ src/google/protobuf/arena_align.cc [apex31]
+[ 21% 29750/136502] //external/protobuf:libprotobuf-cpp-lite-ndk clang++ src/google/protobuf/arenaz_sampler.cc [apex31]
+[ 21% 29751/136502] //external/protobuf:libprotobuf-cpp-lite-ndk clang++ src/google/protobuf/arenastring.cc [apex31]
+[ 21% 29752/136502] //external/protobuf:libprotobuf-cpp-lite-ndk clang++ src/google/protobuf/generated_enum_util.cc [apex31]
+[ 21% 29753/136502] //external/protobuf:libprotobuf-cpp-lite-ndk clang++ src/google/protobuf/extension_set.cc [apex31]
+[ 21% 29754/136502] //external/protobuf:libprotobuf-cpp-lite-ndk clang++ src/google/protobuf/generated_message_util.cc [apex31]
+[ 21% 29755/136502] //external/protobuf:libprotobuf-cpp-lite-ndk clang++ src/google/protobuf/generated_message_tctable_lite.cc [apex31]
+[ 21% 29756/136502] //external/protobuf:libprotobuf-cpp-lite-ndk clang++ src/google/protobuf/inlined_string_field.cc [apex31]
+[ 21% 29757/136502] //external/protobuf:libprotobuf-cpp-lite-ndk clang++ src/google/protobuf/implicit_weak_message.cc [apex31]
+[ 21% 29758/136502] //external/protobuf:libprotobuf-cpp-lite-ndk clang++ src/google/protobuf/io/io_win32.cc [apex31]
+[ 21% 29759/136502] //external/protobuf:libprotobuf-cpp-lite-ndk clang++ src/google/protobuf/io/coded_stream.cc [apex31]
+[ 21% 29760/136502] //external/protobuf:libprotobuf-cpp-lite-ndk clang++ src/google/protobuf/io/zero_copy_sink.cc [apex31]
+[ 21% 29761/136502] //external/protobuf:libprotobuf-cpp-full link libprotobuf-cpp-full-6.33.5.so
+[ 21% 29762/136502] //external/protobuf:libprotobuf-cpp-lite-ndk clang++ src/google/protobuf/io/zero_copy_stream_impl.cc [apex31]
+[ 21% 29763/136502] //external/protobuf:libprotobuf-cpp-lite-ndk clang++ src/google/protobuf/io/zero_copy_stream.cc [apex31]
+[ 21% 29764/136502] //external/protobuf:libprotobuf-cpp-lite-ndk clang++ src/google/protobuf/io/zero_copy_stream_impl_lite.cc [apex31]
+[ 21% 29765/136502] //external/protobuf:libprotobuf-cpp-lite-ndk clang++ src/google/protobuf/map.cc [apex31]
+[ 21% 29766/136502] //external/protobuf:libprotobuf-cpp-lite-ndk clang++ src/google/protobuf/message_lite.cc [apex31]
+[ 21% 29767/136502] //external/protobuf:libprotobuf-cpp-lite-ndk clang++ src/google/protobuf/micro_string.cc [apex31]
+[ 21% 29768/136502] //external/protobuf:libprotobuf-cpp-lite-ndk clang++ src/google/protobuf/raw_ptr.cc [apex31]
+[ 21% 29769/136502] //external/protobuf:libprotobuf-cpp-lite-ndk clang++ src/google/protobuf/port.cc [apex31]
+[ 21% 29770/136502] //external/protobuf:libprotobuf-cpp-lite-ndk clang++ src/google/protobuf/parse_context.cc [apex31]
+[ 21% 29771/136502] //external/protobuf:libprotobuf-cpp-lite-ndk clang++ src/google/protobuf/repeated_field.cc [apex31]
+[ 21% 29772/136502] //external/protobuf:libprotobuf-cpp-lite-ndk clang++ src/google/protobuf/repeated_ptr_field.cc [apex31]
+[ 21% 29773/136502] //external/protobuf:libprotobuf-cpp-lite-ndk clang third_party/utf8_range/naive.c [apex31]
+[ 21% 29774/136502] //external/protobuf:libprotobuf-cpp-lite-ndk clang++ src/google/protobuf/stubs/common.cc [apex31]
+[ 21% 29775/136502] //external/protobuf:libprotobuf-cpp-lite-ndk license metadata [apex31]
+[ 21% 29776/136502] //external/protobuf:libprotobuf-cpp-lite-ndk license metadata [apex33]
+[ 21% 29777/136502] //external/protobuf:libprotobuf-cpp-lite-notls-for-linker license metadata [apex10000]
+[ 21% 29778/136502] //external/protobuf:libprotobuf-java-lite license metadata [apex34]
+[ 21% 29779/136502] //external/protobuf:libprotobuf-java-nano license metadata [apex31]
+[ 21% 29780/136502] //external/protobuf:libprotobuf-cpp-lite-ndk clang third_party/utf8_range/utf8_range.c [apex31]
+[ 21% 29781/136502] //external/protobuf:libprotobuf-lite-bundled-absl-subset license metadata [apex10000]
+[ 21% 29782/136502] //external/rust/android-crates-io/crates/protobuf-support:libprotobuf_support license metadata [apex36]
+[ 21% 29783/136502] //external/rust/android-crates-io/crates/rand:librand license metadata [apex36]
+[ 21% 29784/136502] //external/rust/android-crates-io/crates/rand_chacha:librand_chacha raw librand_chacha.rlib.soong_deps [apex31]
+[ 21% 29785/136502] //external/rust/android-crates-io/crates/rand_chacha:librand_chacha raw librand_chacha.rlib.soong_deps [apex36]
+[ 21% 29786/136502] //external/rust/android-crates-io/crates/rand_core:librand_core rustc src/lib.rs [apex31]
+[ 21% 29787/136502] //external/rust/android-crates-io/crates/rand_core:librand_core rustc src/lib.rs [apex36]
+[ 21% 29788/136502] //external/protobuf:libprotobuf-java-nano javac [apex36]
+[ 21% 29789/136502] //external/protobuf:libprotobuf-cpp-lite-ndk clang++ src/google/protobuf/wire_format_lite.cc [apex31]
+[ 21% 29790/136502] //external/rust/android-crates-io/crates/regex:libregex license metadata [apex33]
+[ 21% 29791/136502] //external/rust/android-crates-io/crates/regex:libregex rustc src/lib.rs [apex10000_p]
+[ 21% 29792/136502] //external/rust/android-crates-io/crates/regex-automata:libregex_automata raw libregex_automata.rlib.soong_deps [apex33]
+[ 21% 29793/136502] //external/regex-re2:libregex_re2 clang++ util/rune.cc [apex31]
+19:45:02 Got signal: interrupt
+ninja: build stopped: interrupted by user.
+19:45:05 ninja failed with: signal: interrupt
+
+#### failed to build some targets (03:07:03 (hh:mm:ss)) ####
+
