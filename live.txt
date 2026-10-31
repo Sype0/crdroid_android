@@ -1,0 +1,82 @@
+run: https://github.com/Sype0/crdroid_android/actions/runs/41236272865  2026-10-31T21:02:59Z
+               total        used        free      shared  buff/cache   available
+Mem:           15983       15395         185           6         732         587
+Swap:          50175       26972       23203
+NAME       TYPE      SIZE   USED PRIO
+/dev/zram0 partition  20G   3.9G  100
+/swapfile  file        5G 810.4M   10
+/swapfile2 file       24G  21.6G   10
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/root       145G   81G   64G  56% /
+/dev/loop1      400G  2.0G  397G   1% /build/src/out
+---- monitor ----
+/dev/root         147719 82229     65474  56% /
+/dev/root         147719 82229     65474  56% /
+== 21:01:26 load=1.61 2.74 3.49
+Mem:           15983       15241         208           6         899         742
+Swap:          50175       26273       23902
+/dev/root         147719 82231     65473  56% /
+/dev/root         147719 82231     65473  56% /
+== 21:02:26 load=2.18 2.70 3.43
+Mem:           15983       15260         184           6         923         723
+Swap:          50175       26924       23251
+/dev/root         147719 82232     65472  56% /
+/dev/root         147719 82232     65472  56% /
+---- preparation ----
+== preparation, attempt 1 20:38:07
+prebuilts/clang/host/linux-x86/clang-r574158 is not in the synced tree, assuming it is unused
+Pruning prebuilts/clang/host/linux-x86/clang-r547379 (keeping: clang-r574158 clang-r584948 clang-r584948b clang-r596125)
+Pruning prebuilts/clang/host/linux-x86/clang-r563880c (keeping: clang-r574158 clang-r584948 clang-r584948b clang-r596125)
+Pruning prebuilts/rust-toolchain/linux-musl-x86/1.91.1 (default is 1.93.1)
+Pruning prebuilts/rust-toolchain/linux-musl-x86/1.92.0 (default is 1.93.1)
+Pruning prebuilts/rust-toolchain/linux-x86/1.91.1 (default is 1.93.1)
+Pruning prebuilts/rust-toolchain/linux-x86/1.92.0 (default is 1.93.1)
+Normalizing source mtimes
+Saved state: s1793475914.
+Projects changed since the saved state:
+Restoring out/ without the build outputs
+14G	out
+/dev/root       145G   56G   89G  39% /
+/dev/loop1      400G  1.3G  397G   1% /build/src/out
+cts present: yes
+---- build ----
+[ 86% 256/296] compile out/host/linux-x86/bin/go/aidl-soong-rules/pkg/android/soong/aidl.a
+[ 86% 257/296] generate serializers out/host/linux-x86/bin/go/aidl-soong-rules/pkg/android/soong/aidl.a.verify_serializers
+[ 87% 258/296] compile out/host/linux-x86/bin/go/soong-csuite/pkg/android/soong/csuite.a
+[ 87% 259/296] generate serializers out/host/linux-x86/bin/go/soong-csuite/pkg/android/soong/csuite.a.verify_serializers
+[ 87% 260/296] compile out/host/linux-x86/bin/go/soong-suite-harness/pkg/android/soong/tradefed/suite_harness.a
+[ 88% 261/296] generate serializers out/host/linux-x86/bin/go/soong-suite-harness/pkg/android/soong/tradefed/suite_harness.a.verify_serializers
+[ 88% 262/296] compile out/host/linux-x86/bin/go/soong-sh/pkg/android/soong/sh.a
+[ 88% 263/296] generate serializers out/host/linux-x86/bin/go/soong-sh/pkg/android/soong/sh.a.verify_serializers
+[ 89% 264/296] compile out/host/linux-x86/bin/go/soong-soong-api/pkg/android/soong/soong_api.a
+[ 89% 265/296] generate serializers out/host/linux-x86/bin/go/soong-soong-api/pkg/android/soong/soong_api.a.verify_serializers
+[ 89% 266/296] compile out/host/linux-x86/bin/go/soong-sysprop/pkg/android/soong/sysprop.a
+[ 90% 267/296] compile out/host/linux-x86/bin/go/soong-systemfeatures/pkg/android/soong/systemfeatures.a
+[ 90% 268/296] generate serializers out/host/linux-x86/bin/go/soong-sysprop/pkg/android/soong/sysprop.a.verify_serializers
+[ 90% 269/296] generate serializers out/host/linux-x86/bin/go/soong-systemfeatures/pkg/android/soong/systemfeatures.a.verify_serializers
+[ 91% 270/296] compile out/host/linux-x86/bin/go/soong-tradefed-modules/pkg/android/soong/tradefed_modules.a
+[ 91% 271/296] generate serializers out/host/linux-x86/bin/go/soong-tradefed-modules/pkg/android/soong/tradefed_modules.a.verify_serializers
+[ 91% 272/296] compile out/host/linux-x86/bin/go/xsdc-soong-rules/pkg/android/soong/xsdc.a
+[ 92% 273/296] generate serializers out/host/linux-x86/bin/go/xsdc-soong-rules/pkg/android/soong/xsdc.a.verify_serializers
+[ 92% 274/296] compile out/host/linux-x86/bin/go/soong-test_suites/pkg/android/soong/test_suites.a
+[ 92% 275/296] generate serializers out/host/linux-x86/bin/go/soong-test_suites/pkg/android/soong/test_suites.a.verify_serializers
+[ 93% 276/296] compile out/host/linux-x86/bin/go/soong-filesystem/pkg/android/soong/filesystem.a
+[ 93% 277/296] generate serializers out/host/linux-x86/bin/go/soong-filesystem/pkg/android/soong/filesystem.a.verify_serializers
+[ 93% 278/296] compile out/host/linux-x86/bin/go/soong-selinux/pkg/android/soong/selinux.a
+[ 94% 279/296] generate serializers out/host/linux-x86/bin/go/soong-selinux/pkg/android/soong/selinux.a.verify_serializers
+[ 94% 280/296] compile out/host/linux-x86/bin/go/vintf-compatibility-matrix-soong-rules/pkg/android/soong/vintf-compatibility-matrix.a
+[ 94% 281/296] generate serializers out/host/linux-x86/bin/go/vintf-compatibility-matrix-soong-rules/pkg/android/soong/vintf-compatibility-matrix.a.verify_serializers
+[ 95% 282/296] compile out/host/linux-x86/bin/go/soong-unbundled/pkg/android/soong/unbundled.a
+[ 95% 283/296] generate serializers out/host/linux-x86/bin/go/soong-unbundled/pkg/android/soong/unbundled.a.verify_serializers
+[ 95% 284/296] compile out/host/linux-x86/bin/go/soong-fsgen/pkg/android/soong/fsgen.a
+[ 96% 285/296] generate serializers out/host/linux-x86/bin/go/soong-fsgen/pkg/android/soong/fsgen.a.verify_serializers
+[ 96% 286/296] compile out/host/linux-x86/bin/go/soong-apex/pkg/android/soong/apex.a
+[ 96% 287/296] generate serializers out/host/linux-x86/bin/go/soong-apex/pkg/android/soong/apex.a.verify_serializers
+[ 97% 288/296] compile out/host/linux-x86/bin/go/soong-art/pkg/android/soong/art.a
+[ 97% 289/296] generate serializers out/host/linux-x86/bin/go/soong-art/pkg/android/soong/art.a.verify_serializers
+[ 97% 290/296] compile out/host/linux-x86/bin/go/soong-sdk/pkg/android/soong/sdk.a
+[ 98% 291/296] generate serializers out/host/linux-x86/bin/go/soong-sdk/pkg/android/soong/sdk.a.verify_serializers
+[ 98% 292/296] compile out/host/linux-x86/bin/go/soong_build/pkg/soong_build.a
+[ 98% 293/296] generate serializers out/host/linux-x86/bin/go/soong_build/pkg/soong_build.a.verify_serializers
+[ 99% 294/296] link out/host/linux-x86/bin/go/soong_build/pkg/soong_build
+[ 99% 295/296] cp out/host/linux-x86/bin/soong_build
