@@ -1,0 +1,404 @@
+run: https://github.com/Sype0/crdroid_android/actions/runs/41301350459
+attempt: 1  rc: 0  state: success  time: 2026-11-01T14:52:22Z  minutes_left: 76
+/dev/root       145G  100G   45G  69% /
+/dev/loop0      300G   35G  264G  12% /build/src
+/dev/loop1      400G   48G  350G  13% /build/src/out
+---- preparation ----
+== preparation, attempt 1 12:00:02
+prebuilts/clang/host/linux-x86/clang-r574158 is not in the synced tree, assuming it is unused
+Pruning prebuilts/clang/host/linux-x86/clang-r547379 (keeping: clang-r574158 clang-r584948 clang-r584948b clang-r596125)
+Pruning prebuilts/clang/host/linux-x86/clang-r563880c (keeping: clang-r574158 clang-r584948 clang-r584948b clang-r596125)
+Pruning prebuilts/rust-toolchain/linux-musl-x86/1.91.1 (default is 1.93.1)
+Pruning prebuilts/rust-toolchain/linux-musl-x86/1.92.0 (default is 1.93.1)
+Pruning prebuilts/rust-toolchain/linux-x86/1.91.1 (default is 1.93.1)
+Pruning prebuilts/rust-toolchain/linux-x86/1.92.0 (default is 1.93.1)
+Normalizing source mtimes
+Saved state: s1793530680.
+Projects changed since the saved state:
+Restoring out/ without the build outputs
+22G	out
+/dev/root       145G   58G   87G  41% /
+/dev/loop1      400G  2.8G  396G   1% /build/src/out
+cts present: yes
+---- errors ----
+18957:fatal: not a git repository (or any parent up to mount point /build)
+18958-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+18959:fatal: not a git repository (or any parent up to mount point /build)
+18960-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+18961:fatal: not a git repository (or any parent up to mount point /build)
+18962-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+18963:fatal: not a git repository (or any parent up to mount point /build)
+18964-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+18965:fatal: not a git repository (or any parent up to mount point /build)
+18966-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+18967:fatal: not a git repository (or any parent up to mount point /build)
+18968-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+18969:fatal: not a git repository (or any parent up to mount point /build)
+18970-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+18971:fatal: not a git repository (or any parent up to mount point /build)
+18972-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+18973:fatal: not a git repository (or any parent up to mount point /build)
+18974-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+18975:fatal: not a git repository (or any parent up to mount point /build)
+18976-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+18977:fatal: not a git repository (or any parent up to mount point /build)
+18978-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+18979:fatal: not a git repository (or any parent up to mount point /build)
+18980-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+18981:fatal: not a git repository (or any parent up to mount point /build)
+18982-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+18983:fatal: not a git repository (or any parent up to mount point /build)
+18984-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+18985:fatal: not a git repository (or any parent up to mount point /build)
+18986-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+18987:fatal: not a git repository (or any parent up to mount point /build)
+18988-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+18989:fatal: not a git repository (or any parent up to mount point /build)
+18990-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+18991:fatal: not a git repository (or any parent up to mount point /build)
+18992-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+18993:fatal: not a git repository (or any parent up to mount point /build)
+18994-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+18995:fatal: not a git repository (or any parent up to mount point /build)
+18996-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+18997:fatal: not a git repository (or any parent up to mount point /build)
+18998-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+18999:fatal: not a git repository (or any parent up to mount point /build)
+19000-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19001:fatal: not a git repository (or any parent up to mount point /build)
+19002-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19003:fatal: not a git repository (or any parent up to mount point /build)
+19004-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19005:fatal: not a git repository (or any parent up to mount point /build)
+19006-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19007:fatal: not a git repository (or any parent up to mount point /build)
+19008-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19009:fatal: not a git repository (or any parent up to mount point /build)
+19010-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19011:fatal: not a git repository (or any parent up to mount point /build)
+19012-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19013:fatal: not a git repository (or any parent up to mount point /build)
+19014-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19015:fatal: not a git repository (or any parent up to mount point /build)
+19016-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19017:fatal: not a git repository (or any parent up to mount point /build)
+19018-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19019:fatal: not a git repository (or any parent up to mount point /build)
+19020-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19021:fatal: not a git repository (or any parent up to mount point /build)
+19022-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19023:fatal: not a git repository (or any parent up to mount point /build)
+19024-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19025:fatal: not a git repository (or any parent up to mount point /build)
+19026-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19027:fatal: not a git repository (or any parent up to mount point /build)
+19028-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19029:fatal: not a git repository (or any parent up to mount point /build)
+19030-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19031:fatal: not a git repository (or any parent up to mount point /build)
+19032-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19033:fatal: not a git repository (or any parent up to mount point /build)
+19034-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19035:fatal: not a git repository (or any parent up to mount point /build)
+19036-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19037:fatal: not a git repository (or any parent up to mount point /build)
+19038-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19039:fatal: not a git repository (or any parent up to mount point /build)
+19040-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19041:fatal: not a git repository (or any parent up to mount point /build)
+19042-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19043:fatal: not a git repository (or any parent up to mount point /build)
+19044-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19045:fatal: not a git repository (or any parent up to mount point /build)
+19046-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19047:fatal: not a git repository (or any parent up to mount point /build)
+19048-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19049:fatal: not a git repository (or any parent up to mount point /build)
+19050-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19051:fatal: not a git repository (or any parent up to mount point /build)
+19052-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19053:fatal: not a git repository (or any parent up to mount point /build)
+19054-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19055:fatal: not a git repository (or any parent up to mount point /build)
+19056-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19057:fatal: not a git repository (or any parent up to mount point /build)
+19058-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19059:fatal: not a git repository (or any parent up to mount point /build)
+19060-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19061:fatal: not a git repository (or any parent up to mount point /build)
+19062-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19063:fatal: not a git repository (or any parent up to mount point /build)
+19064-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19065:fatal: not a git repository (or any parent up to mount point /build)
+19066-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19067:fatal: not a git repository (or any parent up to mount point /build)
+19068-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19069:fatal: not a git repository (or any parent up to mount point /build)
+19070-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19071:fatal: not a git repository (or any parent up to mount point /build)
+19072-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19073:fatal: not a git repository (or any parent up to mount point /build)
+19074-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19075:fatal: not a git repository (or any parent up to mount point /build)
+19076-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19077:fatal: not a git repository (or any parent up to mount point /build)
+19078-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19079:fatal: not a git repository (or any parent up to mount point /build)
+19080-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19081:fatal: not a git repository (or any parent up to mount point /build)
+19082-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19083:fatal: not a git repository (or any parent up to mount point /build)
+19084-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19085:fatal: not a git repository (or any parent up to mount point /build)
+19086-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19087:fatal: not a git repository (or any parent up to mount point /build)
+19088-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19089:fatal: not a git repository (or any parent up to mount point /build)
+19090-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19091:fatal: not a git repository (or any parent up to mount point /build)
+19092-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19093:fatal: not a git repository (or any parent up to mount point /build)
+19094-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19095:fatal: not a git repository (or any parent up to mount point /build)
+19096-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19097:fatal: not a git repository (or any parent up to mount point /build)
+19098-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19099:fatal: not a git repository (or any parent up to mount point /build)
+19100-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19101:fatal: not a git repository (or any parent up to mount point /build)
+19102-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19103:fatal: not a git repository (or any parent up to mount point /build)
+19104-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19105:fatal: not a git repository (or any parent up to mount point /build)
+19106-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19107:fatal: not a git repository (or any parent up to mount point /build)
+19108-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19109:fatal: not a git repository (or any parent up to mount point /build)
+19110-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19111:fatal: not a git repository (or any parent up to mount point /build)
+19112-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19113:fatal: not a git repository (or any parent up to mount point /build)
+19114-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19115:fatal: not a git repository (or any parent up to mount point /build)
+19116-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19117:fatal: not a git repository (or any parent up to mount point /build)
+19118-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19119:fatal: not a git repository (or any parent up to mount point /build)
+19120-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19121:fatal: not a git repository (or any parent up to mount point /build)
+19122-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19123:fatal: not a git repository (or any parent up to mount point /build)
+19124-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19125:fatal: not a git repository (or any parent up to mount point /build)
+19126-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19127:fatal: not a git repository (or any parent up to mount point /build)
+19128-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19129:fatal: not a git repository (or any parent up to mount point /build)
+19130-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19131:fatal: not a git repository (or any parent up to mount point /build)
+19132-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19133:fatal: not a git repository (or any parent up to mount point /build)
+19134-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19135:fatal: not a git repository (or any parent up to mount point /build)
+19136-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19137:fatal: not a git repository (or any parent up to mount point /build)
+19138-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19139:fatal: not a git repository (or any parent up to mount point /build)
+19140-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19141:fatal: not a git repository (or any parent up to mount point /build)
+19142-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19143:fatal: not a git repository (or any parent up to mount point /build)
+19144-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19145:fatal: not a git repository (or any parent up to mount point /build)
+19146-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19147:fatal: not a git repository (or any parent up to mount point /build)
+19148-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19149:fatal: not a git repository (or any parent up to mount point /build)
+19150-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19151:fatal: not a git repository (or any parent up to mount point /build)
+19152-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19153:fatal: not a git repository (or any parent up to mount point /build)
+19154-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19155:fatal: not a git repository (or any parent up to mount point /build)
+19156-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19157:fatal: not a git repository (or any parent up to mount point /build)
+19158-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19159:fatal: not a git repository (or any parent up to mount point /build)
+19160-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19161:fatal: not a git repository (or any parent up to mount point /build)
+19162-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19163:fatal: not a git repository (or any parent up to mount point /build)
+19164-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19165:fatal: not a git repository (or any parent up to mount point /build)
+19166-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19167:fatal: not a git repository (or any parent up to mount point /build)
+19168-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19169:fatal: not a git repository (or any parent up to mount point /build)
+19170-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19171:fatal: not a git repository (or any parent up to mount point /build)
+19172-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19173:fatal: not a git repository (or any parent up to mount point /build)
+19174-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19175:fatal: not a git repository (or any parent up to mount point /build)
+19176-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19177:fatal: not a git repository (or any parent up to mount point /build)
+19178-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19179:fatal: not a git repository (or any parent up to mount point /build)
+19180-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19181:fatal: not a git repository (or any parent up to mount point /build)
+19182-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19183:fatal: not a git repository (or any parent up to mount point /build)
+19184-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19185:fatal: not a git repository (or any parent up to mount point /build)
+19186-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19187:fatal: not a git repository (or any parent up to mount point /build)
+19188-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19189:fatal: not a git repository (or any parent up to mount point /build)
+19190-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19191:fatal: not a git repository (or any parent up to mount point /build)
+19192-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19193:fatal: not a git repository (or any parent up to mount point /build)
+19194-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19195:fatal: not a git repository (or any parent up to mount point /build)
+19196-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19197:fatal: not a git repository (or any parent up to mount point /build)
+19198-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19199:fatal: not a git repository (or any parent up to mount point /build)
+19200-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19201:fatal: not a git repository (or any parent up to mount point /build)
+19202-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19203:fatal: not a git repository (or any parent up to mount point /build)
+19204-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19205:fatal: not a git repository (or any parent up to mount point /build)
+19206-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19207:fatal: not a git repository (or any parent up to mount point /build)
+19208-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19209:fatal: not a git repository (or any parent up to mount point /build)
+19210-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19211:fatal: not a git repository (or any parent up to mount point /build)
+19212-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19213:fatal: not a git repository (or any parent up to mount point /build)
+19214-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19215:fatal: not a git repository (or any parent up to mount point /build)
+19216-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19217:fatal: not a git repository (or any parent up to mount point /build)
+19218-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19219:fatal: not a git repository (or any parent up to mount point /build)
+19220-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19221:fatal: not a git repository (or any parent up to mount point /build)
+19222-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19223:fatal: not a git repository (or any parent up to mount point /build)
+19224-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19225:fatal: not a git repository (or any parent up to mount point /build)
+19226-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19227:fatal: not a git repository (or any parent up to mount point /build)
+19228-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19229:fatal: not a git repository (or any parent up to mount point /build)
+19230-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19231:fatal: not a git repository (or any parent up to mount point /build)
+19232-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19233:fatal: not a git repository (or any parent up to mount point /build)
+19234-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19235:fatal: not a git repository (or any parent up to mount point /build)
+19236-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19237:fatal: not a git repository (or any parent up to mount point /build)
+19238-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19239:fatal: not a git repository (or any parent up to mount point /build)
+19240-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19241:fatal: not a git repository (or any parent up to mount point /build)
+19242-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19243:fatal: not a git repository (or any parent up to mount point /build)
+19244-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19245:fatal: not a git repository (or any parent up to mount point /build)
+19246-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19247:fatal: not a git repository (or any parent up to mount point /build)
+19248-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19249:fatal: not a git repository (or any parent up to mount point /build)
+19250-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19251:fatal: not a git repository (or any parent up to mount point /build)
+19252-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19253:fatal: not a git repository (or any parent up to mount point /build)
+19254-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+19255:fatal: not a git repository (or any parent up to mount point /build)
+19256-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+---- tail ----
+frameworks/base/telephony/java/android/telephony/TelephonyManager.java:12450: warning: Could not resolve a class called 'TelephonyIntents' in 'method android.telephony.TelephonyManager.setSimPowerStateForSlot(int, int)' (ErrorWhenNew) [UnresolvedLink]
+frameworks/base/telephony/java/android/telephony/TelephonyManager.java:17410: warning: Could not resolve a class called 'CarrierBandwidth' in 'field TelephonyManager.CAPABILITY_SECONDARY_LINK_BANDWIDTH_VISIBLE' (ErrorWhenNew) [UnresolvedLink]
+frameworks/base/telephony/java/android/telephony/TelephonyManager.java:17411: warning: Could not resolve a class called 'CarrierBandwidth' in 'field TelephonyManager.CAPABILITY_SECONDARY_LINK_BANDWIDTH_VISIBLE' (ErrorWhenNew) [UnresolvedLink]
+frameworks/base/telephony/java/android/telephony/ThermalMitigationRequest.java:30: warning: Could not resolve a class called 'ThermalMitigationResult' in 'class android.telephony.ThermalMitigationRequest' (ErrorWhenNew) [UnresolvedLink]
+frameworks/base/telephony/java/android/telephony/ThermalMitigationRequest.java:37: warning: Could not resolve a class called 'ThermalMitigationResult' in 'field ThermalMitigationRequest.THERMAL_MITIGATION_ACTION_DATA_THROTTLING' (ErrorWhenNew) [UnresolvedLink]
+frameworks/base/telephony/java/android/telephony/ThermalMitigationRequest.java:48: warning: Could not resolve a class called 'ThermalMitigationResult' in 'field ThermalMitigationRequest.THERMAL_MITIGATION_ACTION_VOICE_ONLY' (ErrorWhenNew) [UnresolvedLink]
+frameworks/base/telephony/java/android/telephony/ThermalMitigationRequest.java:61: warning: Could not resolve a class called 'ThermalMitigationResult' in 'field ThermalMitigationRequest.THERMAL_MITIGATION_ACTION_RADIO_OFF' (ErrorWhenNew) [UnresolvedLink]
+frameworks/base/telephony/java/android/telephony/data/DataService.java:558: warning: Could not resolve a class called 'SubscriptionManager' in 'method android.telephony.data.DataService.DataServiceProvider.notifyImsDataNetwork(int, int, int, int, java.util.concurrent.Executor, java.util.function.Consumer<java.lang.Integer>)' (ErrorWhenNew) [UnresolvedLink]
+frameworks/base/telephony/java/android/telephony/euicc/EuiccManager.java:184: warning: Could not resolve a class called 'android.permission' as could not find a class called 'permission' in 'package android' (ErrorWhenNew) [UnresolvedLink]
+frameworks/base/telephony/java/android/telephony/euicc/EuiccManager.java:207: warning: Could not resolve a class called 'android.permission' as could not find a class called 'permission' in 'package android' (ErrorWhenNew) [UnresolvedLink]
+frameworks/base/telephony/java/android/telephony/euicc/EuiccManager.java:231: warning: Could not resolve a class called 'android.permission' as could not find a class called 'permission' in 'package android' (ErrorWhenNew) [UnresolvedLink]
+frameworks/base/telephony/java/android/telephony/ims/ImsCallProfile.java:493: warning: Could not resolve a class called 'com.android.internal.telephony.imsphone.ImsPhoneConnection' as could not find a package or class called 'imsphone' in 'package com.android.internal.telephony' (ErrorWhenNew) [UnresolvedLink]
+frameworks/base/telephony/java/android/telephony/ims/ImsCallSessionListener.java:644: warning: Could not resolve a class called 'com.android.internal.telephony.Phone' as could not find a class called 'Phone' in 'package com.android.internal.telephony' (ErrorWhenNew) [UnresolvedLink]
+frameworks/base/telephony/java/android/telephony/ims/ImsCallSessionListener.java:645: warning: Could not resolve a class called 'com.android.internal.telephony.Phone' as could not find a class called 'Phone' in 'package com.android.internal.telephony' (ErrorWhenNew) [UnresolvedLink]
+frameworks/base/telephony/java/android/telephony/ims/ImsCallSessionListener.java:646: warning: Could not resolve a class called 'com.android.internal.telephony.Phone' as could not find a class called 'Phone' in 'package com.android.internal.telephony' (ErrorWhenNew) [UnresolvedLink]
+frameworks/base/telephony/java/android/telephony/ims/ImsCallSessionListener.java:647: warning: Could not resolve a class called 'com.android.internal.telephony.Phone' as could not find a class called 'Phone' in 'package com.android.internal.telephony' (ErrorWhenNew) [UnresolvedLink]
+frameworks/base/telephony/java/android/telephony/ims/ImsRcsManager.java:298: warning: Could not resolve a class called 'RegistrationCallback' in 'method android.telephony.ims.ImsRcsManager.unregisterImsRegistrationCallback(android.telephony.ims.RegistrationManager.RegistrationCallback)' (ErrorWhenNew) [UnresolvedLink]
+frameworks/base/telephony/java/android/telephony/ims/ImsVideoCallProvider.java:188: warning: Could not resolve a class called 'Connection.VideoProvider' as could not find a package or class called 'Connection' in 'method android.telephony.ims.ImsVideoCallProvider.onSetCamera(String)' (ErrorWhenNew) [UnresolvedLink]
+frameworks/base/telephony/java/android/telephony/ims/ImsVideoCallProvider.java:198: warning: Could not resolve a class called 'Connection.VideoProvider' as could not find a package or class called 'Connection' in 'method android.telephony.ims.ImsVideoCallProvider.onSetCamera(String, int)' (ErrorWhenNew) [UnresolvedLink]
+frameworks/base/telephony/java/android/telephony/ims/ImsVideoCallProvider.java:203: warning: Could not resolve a class called 'Connection.VideoProvider' as could not find a package or class called 'Connection' in 'method android.telephony.ims.ImsVideoCallProvider.onSetPreviewSurface(android.view.Surface)' (ErrorWhenNew) [UnresolvedLink]
+frameworks/base/telephony/java/android/telephony/ims/ImsVideoCallProvider.java:206: warning: Could not resolve a class called 'Connection.VideoProvider' as could not find a package or class called 'Connection' in 'method android.telephony.ims.ImsVideoCallProvider.onSetDisplaySurface(android.view.Surface)' (ErrorWhenNew) [UnresolvedLink]
+frameworks/base/telephony/java/android/telephony/ims/ImsVideoCallProvider.java:209: warning: Could not resolve a class called 'Connection.VideoProvider' as could not find a package or class called 'Connection' in 'method android.telephony.ims.ImsVideoCallProvider.onSetDeviceOrientation(int)' (ErrorWhenNew) [UnresolvedLink]
+frameworks/base/telephony/java/android/telephony/ims/ImsVideoCallProvider.java:212: warning: Could not resolve a class called 'Connection.VideoProvider' as could not find a package or class called 'Connection' in 'method android.telephony.ims.ImsVideoCallProvider.onSetZoom(float)' (ErrorWhenNew) [UnresolvedLink]
+frameworks/base/telephony/java/android/telephony/ims/ImsVideoCallProvider.java:215: warning: Could not resolve a class called 'Connection.VideoProvider' as could not find a package or class called 'Connection' in 'method android.telephony.ims.ImsVideoCallProvider.onSendSessionModifyRequest(android.telecom.VideoProfile, android.telecom.VideoProfile)' (ErrorWhenNew) [UnresolvedLink]
+frameworks/base/telephony/java/android/telephony/ims/ImsVideoCallProvider.java:219: warning: Could not resolve a class called 'Connection.VideoProvider' as could not find a package or class called 'Connection' in 'method android.telephony.ims.ImsVideoCallProvider.onSendSessionModifyResponse(android.telecom.VideoProfile)' (ErrorWhenNew) [UnresolvedLink]
+frameworks/base/telephony/java/android/telephony/ims/ImsVideoCallProvider.java:222: warning: Could not resolve a class called 'Connection.VideoProvider' as could not find a package or class called 'Connection' in 'method android.telephony.ims.ImsVideoCallProvider.onRequestCameraCapabilities()' (ErrorWhenNew) [UnresolvedLink]
+frameworks/base/telephony/java/android/telephony/ims/ImsVideoCallProvider.java:225: warning: Could not resolve a class called 'Connection.VideoProvider' as could not find a package or class called 'Connection' in 'method android.telephony.ims.ImsVideoCallProvider.onRequestCallDataUsage()' (ErrorWhenNew) [UnresolvedLink]
+frameworks/base/telephony/java/android/telephony/ims/ImsVideoCallProvider.java:228: warning: Could not resolve a class called 'Connection.VideoProvider' as could not find a package or class called 'Connection' in 'method android.telephony.ims.ImsVideoCallProvider.onSetPauseImage(android.net.Uri)' (ErrorWhenNew) [UnresolvedLink]
+frameworks/base/telephony/java/android/telephony/ims/ImsVideoCallProvider.java:231: warning: Could not resolve a class called 'Connection.VideoProvider' as could not find a package or class called 'Connection' in 'method android.telephony.ims.ImsVideoCallProvider.receiveSessionModifyRequest(android.telecom.VideoProfile)' (ErrorWhenNew) [UnresolvedLink]
+frameworks/base/telephony/java/android/telephony/ims/ImsVideoCallProvider.java:241: warning: Could not resolve a class called 'Connection.VideoProvider' as could not find a package or class called 'Connection' in 'method android.telephony.ims.ImsVideoCallProvider.receiveSessionModifyResponse(int, android.telecom.VideoProfile, android.telecom.VideoProfile)' (ErrorWhenNew) [UnresolvedLink]
+frameworks/base/telephony/java/android/telephony/ims/ImsVideoCallProvider.java:252: warning: Could not resolve a class called 'Connection.VideoProvider' as could not find a package or class called 'Connection' in 'method android.telephony.ims.ImsVideoCallProvider.handleCallSessionEvent(int)' (ErrorWhenNew) [UnresolvedLink]
+frameworks/base/telephony/java/android/telephony/ims/ImsVideoCallProvider.java:262: warning: Could not resolve a class called 'Connection.VideoProvider' as could not find a package or class called 'Connection' in 'method android.telephony.ims.ImsVideoCallProvider.changePeerDimensions(int, int)' (ErrorWhenNew) [UnresolvedLink]
+frameworks/base/telephony/java/android/telephony/ims/ImsVideoCallProvider.java:272: warning: Could not resolve a class called 'Connection.VideoProvider' as could not find a package or class called 'Connection' in 'method android.telephony.ims.ImsVideoCallProvider.changeCallDataUsage(long)' (ErrorWhenNew) [UnresolvedLink]
+frameworks/base/telephony/java/android/telephony/ims/ImsVideoCallProvider.java:282: warning: Could not resolve a class called 'Connection.VideoProvider' as could not find a package or class called 'Connection' in 'method android.telephony.ims.ImsVideoCallProvider.changeCameraCapabilities(android.telecom.VideoProfile.CameraCapabilities)' (ErrorWhenNew) [UnresolvedLink]
+frameworks/base/telephony/java/android/telephony/ims/ImsVideoCallProvider.java:292: warning: Could not resolve a class called 'Connection.VideoProvider' as could not find a package or class called 'Connection' in 'method android.telephony.ims.ImsVideoCallProvider.changeVideoQuality(int)' (ErrorWhenNew) [UnresolvedLink]
+frameworks/base/telephony/java/android/telephony/ims/RcsUceAdapter.java:798: warning: Could not resolve a class called 'subid' in 'method android.telephony.ims.RcsUceAdapter.addOnPublishStateChangedListener(java.util.concurrent.Executor, android.telephony.ims.RcsUceAdapter.OnPublishStateChangedListener)' (ErrorWhenNew) [UnresolvedLink]
+frameworks/base/telephony/java/android/telephony/ims/SipDelegateManager.java:317: warning: Could not resolve a class called 'CarrierConfigManager.Ims' as could not find a package or class called 'CarrierConfigManager' in 'method android.telephony.ims.SipDelegateManager.isSupported()' (ErrorWhenNew) [UnresolvedLink]
+frameworks/base/telephony/java/android/telephony/mbms/vendor/MbmsGroupCallServiceBase.java:189: warning: Could not resolve a class called 'MbmsErrors.InitializationErrtrors' as could not find a class called 'InitializationErrtrors' in 'class android.telephony.mbms.MbmsErrors' (ErrorWhenNew) [UnresolvedLink]
+frameworks/base/wifi/java/src/android/net/wifi/nl80211/WifiNl80211Manager.java:933: warning: Could not resolve a class called 'com.android.server.wifi.SupplicantStaIfaceHal' as could not find a package or class called 'wifi' in 'package com.android.server' (ErrorWhenNew) [UnresolvedLink]
+out/srcjars/android/Manifest.java:84: warning: Could not resolve a class called 'Set' in 'field Manifest.permission.SEND_SMS' (ErrorWhenNew) [UnresolvedLink]
+out/srcjars/android/Manifest.java:92: warning: Could not resolve a class called 'Set' in 'field Manifest.permission.RECEIVE_SMS' (ErrorWhenNew) [UnresolvedLink]
+out/srcjars/android/Manifest.java:100: warning: Could not resolve a class called 'Set' in 'field Manifest.permission.READ_SMS' (ErrorWhenNew) [UnresolvedLink]
+out/srcjars/android/Manifest.java:108: warning: Could not resolve a class called 'Set' in 'field Manifest.permission.RECEIVE_WAP_PUSH' (ErrorWhenNew) [UnresolvedLink]
+out/srcjars/android/Manifest.java:116: warning: Could not resolve a class called 'Set' in 'field Manifest.permission.RECEIVE_MMS' (ErrorWhenNew) [UnresolvedLink]
+out/srcjars/android/Manifest.java:142: warning: Could not resolve a class called 'Set' in 'field Manifest.permission.READ_CELL_BROADCASTS' (ErrorWhenNew) [UnresolvedLink]
+out/srcjars/android/Manifest.java:158: warning: Could not resolve a class called 'SurfaceControl.Transaction' as could not find a package or class called 'SurfaceControl' in 'field Manifest.permission.APPLY_PICTURE_PROFILE' (ErrorWhenNew) [UnresolvedLink]
+out/srcjars/android/Manifest.java:241: warning: Could not resolve a class called 'Set' in 'field Manifest.permission.READ_EXTERNAL_STORAGE' (ErrorWhenNew) [UnresolvedLink]
+out/srcjars/android/Manifest.java:361: warning: Could not resolve a class called 'Collection' in 'field Manifest.permission.MANAGE_MEDIA' (ErrorWhenNew) [UnresolvedLink]
+out/srcjars/android/Manifest.java:361: warning: Could not resolve a class called 'ContentResolver' in 'field Manifest.permission.MANAGE_MEDIA' (ErrorWhenNew) [UnresolvedLink]
+out/srcjars/android/Manifest.java:362: warning: Could not resolve a class called 'Collection' in 'field Manifest.permission.MANAGE_MEDIA' (ErrorWhenNew) [UnresolvedLink]
+out/srcjars/android/Manifest.java:362: warning: Could not resolve a class called 'ContentResolver' in 'field Manifest.permission.MANAGE_MEDIA' (ErrorWhenNew) [UnresolvedLink]
+out/srcjars/android/Manifest.java:363: warning: Could not resolve a class called 'Collection' in 'field Manifest.permission.MANAGE_MEDIA' (ErrorWhenNew) [UnresolvedLink]
+out/srcjars/android/Manifest.java:363: warning: Could not resolve a class called 'ContentResolver' in 'field Manifest.permission.MANAGE_MEDIA' (ErrorWhenNew) [UnresolvedLink]
+out/srcjars/android/Manifest.java:391: warning: Could not resolve a class called 'Set' in 'field Manifest.permission.ACCESS_BACKGROUND_LOCATION' (ErrorWhenNew) [UnresolvedLink]
+out/srcjars/android/Manifest.java:432: warning: Could not resolve a class called 'Set' in 'field Manifest.permission.READ_CALL_LOG' (ErrorWhenNew) [UnresolvedLink]
+out/srcjars/android/Manifest.java:449: warning: Could not resolve a class called 'Set' in 'field Manifest.permission.WRITE_CALL_LOG' (ErrorWhenNew) [UnresolvedLink]
+out/srcjars/android/Manifest.java:459: warning: Could not resolve a class called 'Set' in 'field Manifest.permission.PROCESS_OUTGOING_CALLS' (ErrorWhenNew) [UnresolvedLink]
+out/srcjars/android/Manifest.java:554: warning: Could not resolve a class called 'PhoneAccountHandle' in 'field Manifest.permission.ACCEPT_HANDOVER' (ErrorWhenNew) [UnresolvedLink]
+out/srcjars/android/Manifest.java:554: warning: Could not resolve a class called 'Uri' in 'field Manifest.permission.ACCEPT_HANDOVER' (ErrorWhenNew) [UnresolvedLink]
+out/srcjars/android/Manifest.java:681: warning: Could not resolve a class called 'Set' in 'field Manifest.permission.BODY_SENSORS_BACKGROUND' (ErrorWhenNew) [UnresolvedLink]
+out/srcjars/android/Manifest.java:3214: warning: Could not resolve a class called 'Intent' in 'field Manifest.permission.SEND_SHOW_SUSPENDED_APP_DETAILS' (ErrorWhenNew) [UnresolvedLink]
+out/srcjars/android/Manifest.java:3290: warning: Could not resolve a class called 'android.view.WindowManager.LayoutsParams' as could not find a class called 'LayoutsParams' in 'class android.view.WindowManager' (ErrorWhenNew) [UnresolvedLink]
+out/srcjars/android/Manifest.java:3428: warning: Could not resolve a class called 'PictureInPictureParams.Builder' as could not find a package or class called 'PictureInPictureParams' in 'field Manifest.permission.TV_IMPLICIT_ENTER_PIP' (ErrorWhenNew) [UnresolvedLink]
+out/srcjars/android/Manifest.java:3429: warning: Could not resolve a class called 'Activity' in 'field Manifest.permission.TV_IMPLICIT_ENTER_PIP' (ErrorWhenNew) [UnresolvedLink]
+out/srcjars/android/Manifest.java:3429: warning: Could not resolve a class called 'Activity' in 'field Manifest.permission.TV_IMPLICIT_ENTER_PIP' (ErrorWhenNew) [UnresolvedLink]
+out/srcjars/android/Manifest.java:4218: warning: Could not resolve a class called 'android.view.WindowManager.LayoutsParams' as could not find a class called 'LayoutsParams' in 'class android.view.WindowManager' (ErrorWhenNew) [UnresolvedLink]
+out/srcjars/android/Manifest.java:6147: warning: Could not resolve a class called 'DomainVerificationManager' in 'field Manifest.permission.QUERY_DOMAIN_VERIFICATION' (ErrorWhenNew) [UnresolvedLink]
+out/srcjars/android/Manifest.java:6148: warning: Could not resolve a class called 'DomainVerificationManager' in 'field Manifest.permission.QUERY_DOMAIN_VERIFICATION' (ErrorWhenNew) [UnresolvedLink]
+out/srcjars/android/Manifest.java:7070: warning: Could not resolve a class called 'Intent' in 'field Manifest.permission.SEND_DEVICE_CUSTOMIZATION_READY' (ErrorWhenNew) [UnresolvedLink]
+out/srcjars/android/Manifest.java:7076: warning: Could not resolve a class called 'Intent' in 'field Manifest.permission.RECEIVE_DEVICE_CUSTOMIZATION_READY' (ErrorWhenNew) [UnresolvedLink]
+out/srcjars/android/Manifest.java:7101: warning: Could not resolve a class called 'Intent' in 'field Manifest.permission.REVIEW_ACCESSIBILITY_SERVICES' (ErrorWhenNew) [UnresolvedLink]
+out/srcjars/android/R.java:1139: warning: Could not resolve a class called 'Intent' in 'field R.attr.attributionTags' (ErrorWhenNew) [UnresolvedLink]
+out/srcjars/android/R.java:2335: warning: Could not resolve a class called 'View' in 'field R.attr.clipToOutline' (ErrorWhenNew) [UnresolvedLink]
+out/srcjars/android/R.java:12011: warning: Could not resolve a class called 'Matrix' in 'field R.attr.scaleType' (ErrorWhenNew) [UnresolvedLink]
+out/srcjars/android/R.java:14011: warning: Could not resolve a class called 'MotionEvent' in 'field R.attr.supportsStylusHandwriting' (ErrorWhenNew) [UnresolvedLink]
+out/srcjars/android/R.java:16049: warning: Could not resolve a class called 'Activity' in 'field R.attr.usesPermissionFlags' (ErrorWhenNew) [UnresolvedLink]
+[100% 24606/24606] //frameworks/base/api:test-api-stubs-docs-non-updatable check current API
+
+#### build completed successfully (01:21:45 (hh:mm:ss)) ####
+
