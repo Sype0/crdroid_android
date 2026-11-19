@@ -1,4 +1,4 @@
-name: Build crDroid 17.0 (topaz)
+name: Build crDroid 13.1 (17.0, topaz)
 
 on:
   workflow_dispatch:
@@ -32,6 +32,9 @@ concurrency:
 env:
   # crDroid 17.0 is based on LineageOS 24.0 (Android 17)
   LOS_BRANCH: "17.0"
+  # crDroid 13.1: the manifest as of vendor/crdroid 15b1b035 "Bump to version 13.1"
+  # (2026-11-07); ci/pin_13.1.xml pins every upstream project to that point.
+  MANIFEST_REV: 823087de2860e9fb1f1cd7ce8493693ace73e7ad
   DEVICE: topaz
   # GitHub kills the job at 360 min; leave room to save ccache + upload.
   JOB_BUDGET_MIN: 335
@@ -121,11 +124,12 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           mkdir -p src && cd src
-          repo init -u https://github.com/crdroidandroid/android.git -b "$LOS_BRANCH" \
+          repo init -u https://github.com/crdroidandroid/android.git -b "$MANIFEST_REV" \
             --git-lfs --depth=1 --no-clone-bundle -g default,-mips,-darwin,-notdefault
           mkdir -p .repo/local_manifests
           cp "$GITHUB_WORKSPACE/manifests/local_manifests.xml" .repo/local_manifests/
           cp "$GITHUB_WORKSPACE/manifests/ci/remove_unneeded.xml" .repo/local_manifests/
+          cp "$GITHUB_WORKSPACE/manifests/ci/pin_13.1.xml" .repo/local_manifests/
           rc=0
           "$GITHUB_WORKSPACE/manifests/ci/sync.sh" || rc=$?
           # Unused clang versions are pruned by ci/build.sh, which also knows the
@@ -219,7 +223,7 @@ jobs:
           for img in boot.img vendor_boot.img dtbo.img recovery.img; do [ -f "$img" ] && files+=("$img"); done
           tag="${DEVICE}-$(date +%Y%m%d)-${{ github.run_number }}"
           gh release create "$tag" "${files[@]}" -R "$GITHUB_REPOSITORY" \
-            --title "crDroid 17.0 $DEVICE $(date +%Y-%m-%d)" --notes "Built by run ${{ github.run_id }} (no MIUI Camera)."
+            --title "crDroid 13.1 $DEVICE $(date +%Y-%m-%d)" --notes "Built by run ${{ github.run_id }} (no MIUI Camera)."
 
       - name: Drop the saved out/ state
         if: success()
