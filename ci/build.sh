@@ -106,9 +106,10 @@ ensure_disk_swap() {
         avail=$(df -BM --output=avail / | tail -1 | tr -dc 0-9)
     fi
     # The analysis peaks well above RAM + zram (Android 17 + crDroid: past
-    # 16 GB RAM + 37 GB swap); add as much as the disk allows, keeping 8 GB free
+    # 16 GB RAM + 37 GB swap); add as much as the disk allows, keeping 8 GB free.
+    # zram is smaller now (12G), so allow more disk swap to keep the total.
     local size=$(( ${avail:-0} - 8192 ))
-    [ "$size" -gt 24576 ] && size=24576
+    [ "$size" -gt 34816 ] && size=34816
     if ! swapon --show=NAME --noheadings | grep -qx /swapfile2 && [ "$size" -ge 2048 ]; then
         echo "Adding a ${size}M second swap file for the analysis (${avail}M free)"
         sudo fallocate -l "${size}M" /swapfile2 && sudo chmod 600 /swapfile2 && sudo mkswap -q /swapfile2 && sudo swapon -p 10 /swapfile2

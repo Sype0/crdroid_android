@@ -68,9 +68,12 @@ jobs:
           swap=8G
           # The runner image may already have zram0 configured and in use, so ask
           # zramctl for a free device instead of writing to zram0 directly.
-          # Soong's heap compresses well, so 20G of zram holds far more than it costs in RAM
+          # Keep zram modest: its compressed pages live in RAM, and a 20G device
+          # filled to ~16G during the analysis while the disk swap stayed unused,
+          # starving the runner until it lost contact (run 44708841549).
+          # Past 12G the kernel spills to the disk swap files instead.
           if { sudo modprobe zram 2>/dev/null || { sudo apt-get install -y -qq "linux-modules-extra-$(uname -r)" && sudo modprobe zram; }; } &&
-             zdev=$(sudo zramctl --find --size 20G --algorithm zstd) &&
+             zdev=$(sudo zramctl --find --size 12G --algorithm zstd) &&
              sudo mkswap "$zdev" && sudo swapon -p 100 "$zdev"; then
             echo "zram swap on $zdev"
             swap=5G
@@ -79,6 +82,12 @@ jobs:
           fi
           sudo fallocate -l "$swap" /swapfile && sudo chmod 600 /swapfile
           sudo mkswap /swapfile && sudo swapon -p 10 /swapfile
+          # Keep a RAM reserve so the runner agent can still talk to GitHub under
+          # memory pressure, and let the OOM killer pick the build, not the runner.
+          sudo sysctl -w vm.min_free_kbytes=524288 vm.watermark_scale_factor=200
+          for pid in $(pgrep -f 'Runner\.(Listener|Worker)'); do
+            echo -1000 | sudo tee "/proc/$pid/oom_score_adj" > /dev/null
+          done
           # The source tree (~85G) goes on a zstd-compressed btrfs volume too:
           # on the plain disk it left too little room for out/ to finish packaging.
           mkdir -p /build/src
