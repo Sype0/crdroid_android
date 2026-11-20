@@ -66,11 +66,13 @@ jobs:
           sudo mkdir -p /build && sudo chown "$USER:$USER" /build
           # Prefer zram (costs no disk) with a small disk swap as overflow.
           swap=8G
-          if sudo modprobe zram 2>/dev/null || { sudo apt-get install -y -qq "linux-modules-extra-$(uname -r)" && sudo modprobe zram; }; then
-            echo zstd | sudo tee /sys/block/zram0/comp_algorithm
-            # Soong's heap compresses well, so 20G of zram holds far more than it costs in RAM
-            echo 20G | sudo tee /sys/block/zram0/disksize
-            sudo mkswap /dev/zram0 && sudo swapon -p 100 /dev/zram0
+          # The runner image may already have zram0 configured and in use, so ask
+          # zramctl for a free device instead of writing to zram0 directly.
+          # Soong's heap compresses well, so 20G of zram holds far more than it costs in RAM
+          if { sudo modprobe zram 2>/dev/null || { sudo apt-get install -y -qq "linux-modules-extra-$(uname -r)" && sudo modprobe zram; }; } &&
+             zdev=$(sudo zramctl --find --size 20G --algorithm zstd) &&
+             sudo mkswap "$zdev" && sudo swapon -p 100 "$zdev"; then
+            echo "zram swap on $zdev"
             swap=5G
           else
             echo "::warning::zram unavailable, using a ${swap} swap file only"
