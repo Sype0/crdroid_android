@@ -169,6 +169,24 @@ jobs:
           git -C "$GITHUB_WORKSPACE/manifests" pull -q --ff-only || true
           cp "$GITHUB_WORKSPACE/manifests/local_manifests.xml" .repo/local_manifests/
           cp "$GITHUB_WORKSPACE/manifests/ci/build.sh" /build/ci-build.sh
+          # Run the build in its own memory cgroup. Run 44742507365 lost contact
+          # during the analysis with RAM full and 30G of 52G swap in use: swap was
+          # not exhausted, the runner agent was starved. A cgroup limit pushes the
+          # build's own pages to swap (zram first) and leaves RAM for the runner.
+          # zram's compressed pages are not charged to the cgroup, so leave room
+          # for them (12G zram ~ 4G RAM) on top of the runner's share.
+          cg=/sys/fs/cgroup/build
+          mem=$(awk '/^MemTotal:/ {print int($2 / 1024)}' /proc/meminfo)
+          high=$(( mem - 4608 ))
+          echo +memory | sudo tee /sys/fs/cgroup/cgroup.subtree_control > /dev/null || true
+          if sudo mkdir -p "$cg" &&
+             echo "${high}M" | sudo tee "$cg/memory.high" > /dev/null &&
+             echo "$(( high + 1024 ))M" | sudo tee "$cg/memory.max" > /dev/null &&
+             echo $$ | sudo tee "$cg/cgroup.procs" > /dev/null; then
+            echo "Build cgroup: memory.high=${high}M memory.max=$(( high + 1024 ))M (RAM ${mem}M)"
+          else
+            echo "::warning::Could not put the build in a memory cgroup, the runner may get starved"
+          fi
           rc=0
           VARIANT="${{ inputs.variant }}" TARGET="${{ inputs.target }}" WAIT_FOR_FIX="${{ inputs.wait_for_fix }}" \
             MANIFESTS_DIR="$GITHUB_WORKSPACE/manifests" /build/ci-build.sh || rc=$?
