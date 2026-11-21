@@ -1,0 +1,80 @@
+run: https://github.com/Sype0/crdroid_android/actions/runs/44881773984  2026-11-21T12:19:46Z
+               total        used        free      shared  buff/cache   available
+Mem:           15701        4066        1538          26       12864       11635
+Swap:          12287         155       12132
+NAME       TYPE      SIZE   USED PRIO
+/dev/zram1 partition  12G 155.4M  100
+Filesystem            Size  Used Avail Use% Mounted on
+/dev/mapper/cow-root  145G   55G   91G  38% /
+/dev/loop3            400G  6.4G  393G   2% /build/src/out
+---- monitor ----
+/dev/mapper/cow-root    147719 56746     90958  39% /
+/dev/mapper/cow-root    147719 56746     90958  39% /
+== 12:18:33 load=0.35 0.24 0.10
+Mem:           15701        4495        1155          26       12832       11205
+Swap:          12287         155       12132
+/dev/mapper/cow-root    147719 56746     90958  39% /
+/dev/mapper/cow-root    147719 56746     90958  39% /
+== 12:19:33 load=0.13 0.19 0.09
+Mem:           15701        4495        1155          26       12832       11206
+Swap:          12287         155       12132
+/dev/mapper/cow-root    147719 56746     90958  39% /
+/dev/mapper/cow-root    147719 56746     90958  39% /
+---- preparation ----
+== preparation, attempt 1 08:18:17
+prebuilts/clang/host/linux-x86/clang-r574158 is not in the synced tree, assuming it is unused
+Pruning prebuilts/clang/host/linux-x86/clang-r547379 (keeping: clang-r574158 clang-r584948 clang-r584948b clang-r596125)
+Pruning prebuilts/clang/host/linux-x86/clang-r563880c (keeping: clang-r574158 clang-r584948 clang-r584948b clang-r596125)
+Pruning prebuilts/rust-toolchain/linux-musl-x86/1.91.1 (default is 1.93.1)
+Pruning prebuilts/rust-toolchain/linux-musl-x86/1.92.0 (default is 1.93.1)
+Pruning prebuilts/rust-toolchain/linux-x86/1.91.1 (default is 1.93.1)
+Pruning prebuilts/rust-toolchain/linux-x86/1.92.0 (default is 1.93.1)
+Normalizing source mtimes
+Saved state: s1795220744.
+Projects changed since the saved state:
+Restoring out/ without the build outputs
+12G	out
+/dev/mapper/cow-root  145G   60G   85G  42% /
+/dev/loop3            400G  845M  398G   1% /build/src/out
+cts present: yes
+---- build ----
+[  0% 60/149797] //frameworks/base/packages/SettingsLib/Utils:SettingsLibUtils kotlinc [apex31]
+[  0% 61/149797] //frameworks/opt/telephony:telephony-common javac
+FAILED: out/soong/.intermediates/frameworks/opt/telephony/telephony-common/android_common/javac/telephony-common.jar out/soong/.intermediates/frameworks/opt/telephony/telephony-common/android_common/javac/anno.srcjar
+rm -rf "out/soong/.intermediates/frameworks/opt/telephony/telephony-common/android_common/javac/classes" "out/soong/.intermediates/frameworks/opt/telephony/telephony-common/android_common/javac/anno" "out/soong/.intermediates/frameworks/opt/telephony/telephony-common/android_common/javac/anno.srcjar
+frameworks/opt/telephony/src/java/com/android/internal/telephony/ServiceStateTracker.java:2888: error: cannot find symbol
+                Settings.Global.FORCE_LTE_CA + "_" + phoneId);
+                               ^
+  symbol:   variable FORCE_LTE_CA
+  location: class Global
+frameworks/opt/telephony/src/java/com/android/internal/telephony/ServiceStateTracker.java:2910: error: cannot find symbol
+                Settings.Global.FORCE_LTE_CA + "_" + phoneId,
+                               ^
+  symbol:   variable FORCE_LTE_CA
+  location: class Global
+frameworks/opt/telephony/src/java/com/android/internal/telephony/ServiceStateTracker.java:2921: error: cannot find symbol
+                mSS.setForceLteCA(newForceLteCA);
+                   ^
+  symbol:   method setForceLteCA(Boolean)
+  location: variable mSS of type ServiceState
+frameworks/opt/telephony/src/java/com/android/internal/telephony/ServiceStateTracker.java:3157: error: cannot find symbol
+        mNewSS.setForceLteCA(mForceLteCA);
+              ^
+  symbol:   method setForceLteCA(Boolean)
+  location: variable mNewSS of type ServiceState
+4 errors
+[  0% 62/149797] //frameworks/base/packages/SettingsLib/Utils:SettingsLibUtils kotlinc [apex33]
+[  0% 63/149797] //frameworks/base/packages/SettingsLib/Utils:SettingsLibUtils turbine [apex34]
+[  0% 64/149797] //frameworks/base/packages/SettingsLib/SettingsTheme:SettingsLibSettingsTheme kotlinc [apex34]
+frameworks/base/packages/SettingsLib/SettingsTheme/src/com/android/settingslib/widget/PreferenceFooterAttachers.kt:46:9: warning: this annotation is currently applied to the value parameter only, but in the future it will also be applied to field.
+- To opt in to applying to both value parameter and field, add '-Xannotation-default-target=param-property' to your compiler arguments.
+- To keep applying to the value parameter only, use the '@param:' annotation target.
+
+See https://youtrack.jetbrains.com/issue/KT-73255 for more details.
+        @DrawableRes val imageRes: Int? = null,
+        ^^^^^^^^^^^^
+ninja: build stopped: subcommand failed.
+08:58:21 ninja failed with: exit status 1
+
+#### failed to build some targets (53 seconds) ####
+
