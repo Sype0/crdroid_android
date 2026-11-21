@@ -72,7 +72,7 @@
   <extend-project name="LineageOS/android_external_wpa_supplicant_8" path="external/wpa_supplicant_8" revision="4d70ee052a9f65038a24ec7ea2f2bb3f92b17277" /><!-- lineage-24.0 2026-10-14 -->
   <extend-project name="LineageOS/android_external_zstd" path="external/zstd" revision="1bfdf8aef6bdec0e817c1f75aeaf382db22de668" /><!-- lineage-24.0 2026-06-20 -->
   <extend-project name="crdroidandroid/android_frameworks_av" path="frameworks/av" revision="bfd9660a68339b151cfda90c817a8865ed982df1" /><!-- 17.0 2026-11-04 -->
-  <extend-project name="crdroidandroid/android_frameworks_base" path="frameworks/base" revision="7c7188f8585e20c035eb43fed72df5e717614b38" /><!-- 17.0 2026-11-06 -->
+  <extend-project name="crdroidandroid/android_frameworks_base" path="frameworks/base" revision="c0539520592fc063caaf9e85eb36534ac0b451b4" /><!-- 17.0 2026-11-19: Force LTE_CA [1/3], needed by opt/telephony [2/3] -->
   <extend-project name="LineageOS/android_frameworks_hardware_interfaces" path="frameworks/hardware/interfaces" revision="f80da5a738798ed94d061f79ebe78edf26391424" /><!-- lineage-24.0 2026-09-18 -->
   <extend-project name="crdroidandroid/android_frameworks_libs_systemui" path="frameworks/libs/systemui" revision="e3af1c0c29b9b49025fa9167dac10fa8650afd72" /><!-- 17.0 2026-11-07 -->
   <extend-project name="crdroidandroid/android_frameworks_native" path="frameworks/native" revision="51043566f8a8deab4a5789ccf480bd2abd7a8c76" /><!-- 17.0 2026-11-04 -->
